@@ -1,0 +1,2 @@
+# WebPractDjango
+Django Application
