@@ -13,9 +13,6 @@ class Movie(models.Model):
     url = models.URLField()
     popularity = models.IntegerField()
     country = models.TextField(blank=True, null=True)
-    director = models.ForeignKey(Director)
-    actor = models.ForeignKey(Actor)
-    producer = models.ForeignKey(Production)
 
     def __unicode__(self):
         return u"%s" % self.title
@@ -32,9 +29,6 @@ class Serie(models.Model):
     popularity = models.IntegerField()
     numberSeasons = models.IntegerField()
     numberChapters = models.IntegerField()
-    director = models.ForeignKey(Director)
-    actor = models.ForeignKey(Actor)
-    platform = models.ForeignKey(Platform)
 
     def __unicode__(self):
         return u"%s" % self.title
@@ -119,3 +113,7 @@ class Review(models.Model):
 
 class MovieReview(Review):
     movie = models.ForeignKey(Movie)
+
+
+class SerieReview(Review):
+    movie = models.ForeignKey(Serie)
