@@ -45,6 +45,8 @@ class Actor(models.Model):
     deathday = models.TextField()
     gender = models.TextField()
     place = models.TextField()
+    serie = models.ForeignKey(Serie, null=True, related_name="ActorS")
+    movie = models.ForeignKey(Movie, null=True, related_name="ActorM")
 
     def __unicode__(self):
         return u"%s" % self.name
@@ -62,6 +64,8 @@ class Director(models.Model):
     deathday = models.TextField()
     gender = models.TextField()
     place = models.TextField()
+    serie = models.ForeignKey(Serie, null=True, related_name="DirectorS")
+    movie = models.ForeignKey(Movie, null=True, related_name="DirectorM")
 
     def __unicode__(self):
         return u"%s" % self.name
@@ -70,30 +74,6 @@ class Director(models.Model):
         return reverse('FilmRevolutionApp:director_detail',
                        kwargs={'pkm': self.movie.pk, 'pks': self.serie.pk,
                                'pk': self.pk})
-
-
-class Platform(models.Model):
-    name = models.TextField()
-    url = models.URLField()
-
-    def __unicode__(self):
-        return u"%s" % self.name
-
-    def get_absolute_url(self):
-        return reverse('FilmRevolutionApp:platform_detail',
-                       kwargs={'pks': self.serie.pk, 'pk': self.pk})
-
-
-class Production(models.Model):
-    name = models.TextField()
-    url = models.URLField()
-
-    def __unicode__(self):
-        return u"%s" % self.name
-
-    def get_absolute_url(self):
-        return reverse('FilmRevolutionApp:actor_detail',
-                       kwargs={'pkm': self.movie.pk, 'pk': self.pk})
 
 
 class Review(models.Model):
@@ -109,6 +89,32 @@ class Review(models.Model):
 
     class Meta:
         abstract = True
+
+
+class Platform(models.Model):
+    name = models.TextField()
+    url = models.URLField()
+    serie = models.ForeignKey(Serie)
+
+    def __unicode__(self):
+        return u"%s" % self.name
+
+    def get_absolute_url(self):
+        return reverse('FilmRevolutionApp:platform_detail',
+                       kwargs={'pks': self.serie.pk, 'pk': self.pk})
+
+
+class Production(models.Model):
+    name = models.TextField()
+    url = models.URLField()
+    movie = models.ForeignKey(Movie)
+
+    def __unicode__(self):
+        return u"%s" % self.name
+
+    def get_absolute_url(self):
+        return reverse('FilmRevolutionApp:actor_detail',
+                       kwargs={'pkm': self.movie.pk, 'pk': self.pk})
 
 
 class MovieReview(Review):
