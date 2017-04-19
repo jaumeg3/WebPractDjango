@@ -19,7 +19,7 @@ from django.contrib.auth.views import login, logout
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^FilmRevolutionApp/', include('FilmRevolutionApp.urls',
-                                       namespace='FilmRevolutionApp')),
+                                        namespace='Film Revolution App')),
     url(r'^accounts/login/$', login, name='login'),
     url(r'^accounts/logout/$', logout, name='logout'),
 ]

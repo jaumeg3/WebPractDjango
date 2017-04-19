@@ -1,16 +1,15 @@
 from django.conf.urls import url
 from django.utils import timezone
-from django.views.generic import DetailView, ListView, UpdateView
-from models import Movie, Serie, Director, Actor, Platform, Production
-from forms import  MovieForm, SerieForm, DirectorForm, ActorForm, PlatformForm, ProductionForm
+from django.views.generic import ListView, UpdateView
+from models import Movie, Serie
+from forms import MovieForm, SerieForm
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
-    DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, review
+    DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, reviewM, \
+    reviewS,
 
 urlpatterns = [
     # List latest 5 movies: /movies/
-    url(r'^$', ListView.as_view(
-        template_name='base.html'
-    )),
+    url(r'^$', mainpage, name='home'),
     url(r'^movies/$',
         ListView.as_view(
             queryset=Movie.objects.filter(
@@ -24,13 +23,13 @@ urlpatterns = [
             queryset=Serie.objects.filter(
                 date__lte=timezone.now()).order_by('date')[:5],
             context_object_name='latest_serie_list',
-            template_name='series/movie_serie.html'),
+            template_name='series/serie_list.html'),
         name='serie_list'),
     # Movie details, ex.: /movies/1/
     url(r'^movies/(?P<pk>\d+)/$',
         MovieDetail.as_view(),
         name='movie_detail'),
-    # Serie details, ex.: /series/1/
+    # Movie details, ex.: /series/1/
     url(r'^series/(?P<pk>\d+)/$',
         SerieDetail.as_view(),
         name='serie_detail'),
@@ -62,14 +61,14 @@ urlpatterns = [
     url(r'^movies/(?P<pk>\d+)/edit/$',
         UpdateView.as_view(
             model=Movie,
-            template_name='FilmRevolutionApp/form.html',
+            template_name='movies/movie_detail.html',
             form_class=MovieForm),
         name='movies_edit'),
     # Edit serie details, ex.: /movies/1/edit/
     url(r'^series/(?P<pk>\d+)/edit/$',
         UpdateView.as_view(
             model=Serie,
-            template_name='FilmRevolutionApp/form.html',
+            template_name='series/serie_detail.html',
             form_class=SerieForm),
         name='series_edit'),
     # Create a movie review, ex.: /movie/1/reviews/create/

@@ -126,4 +126,4 @@ class MovieReview(Review):
 
 
 class SerieReview(Review):
-    movie = models.ForeignKey(Serie)
+    serie = models.ForeignKey(Serie)

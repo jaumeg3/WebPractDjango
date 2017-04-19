@@ -11,6 +11,8 @@ from forms import MovieForm, SerieForm, DirectorForm, ActorForm, \
 
 # Create your views here.
 
+def mainpage():
+
 class MovieDetail(DetailView):
     model = Movie
     template_name = 'movies/movie_detail.html'
@@ -90,7 +92,7 @@ class PlatformDetail(DetailView):
 
 
 
-def review(request, pk):
+def reviewM(request, pk):
     movie = get_object_or_404(Movie, pk=pk)
     reviews = MovieReview(
         rating=request.POST['rating'],
