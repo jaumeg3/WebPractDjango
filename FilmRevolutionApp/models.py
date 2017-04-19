@@ -13,6 +13,8 @@ class Movie(models.Model):
     url = models.URLField()
     popularity = models.IntegerField()
     country = models.TextField(blank=True, null=True)
+    date = models.DateField(default=date.today)
+    user = models.ForeignKey(User)
 
     def __unicode__(self):
         return u"%s" % self.title
@@ -29,6 +31,8 @@ class Serie(models.Model):
     popularity = models.IntegerField()
     numberSeasons = models.IntegerField()
     numberChapters = models.IntegerField()
+    date = models.DateField(default=date.today)
+    user = models.ForeignKey(User)
 
     def __unicode__(self):
         return u"%s" % self.title
@@ -94,7 +98,7 @@ class Review(models.Model):
 class Platform(models.Model):
     name = models.TextField()
     url = models.URLField()
-    serie = models.ForeignKey(Serie)
+    serie = models.ForeignKey(Serie, null=True)
 
     def __unicode__(self):
         return u"%s" % self.name
@@ -107,7 +111,7 @@ class Platform(models.Model):
 class Production(models.Model):
     name = models.TextField()
     url = models.URLField()
-    movie = models.ForeignKey(Movie)
+    movie = models.ForeignKey(Movie, null=True)
 
     def __unicode__(self):
         return u"%s" % self.name

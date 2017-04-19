@@ -1,0 +1,19 @@
+{%  extends  "series/base.html"  %}
+    {%  block  content  %}
+        <h1>
+            Movies
+            {%  if  user  %}
+                (<a  href="{%  url  'FilmRevolutionApp:serie_create'  %}">add</a>)
+            {%  endif  %}
+        </h1>
+        <ul>
+            {%  for  serie  in  latest_serie_list  %}
+                <li>
+                    <a  href="{%  url  'FilmRevolutionApp:serie_detail'  serie.id  %}"> {{  serie.title  }}
+                    </a>
+                </li>
+            {%  empty  %}
+                <li>Sorry,  no  movies  registered  yet.</li>
+            {%  endfor  %}
+        </ul>
+    {%  endblock  %}

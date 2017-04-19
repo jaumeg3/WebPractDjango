@@ -1,0 +1,66 @@
+{%  extends  "series/base.html"  %}
+    {%  block  content  %}
+        <h1>
+            {{  serie.title  }}
+                {%  if  user  ==  serie.user  %}
+                    (<a  href="{%  url  'FilmRevolutionApp:series_edit'  serie.id  %}">edit</a>)
+                {%  endif  %}
+        </h1>
+        <h2>
+            Genere:
+        </h2>
+            <p>
+                {{  serie.genere  }}
+            </p>
+        <h2>
+            Number of Seasons:
+        </h2>
+            <p>
+                {{  serie.numberSeasons  }}
+            </p>
+        <h2>
+            Number of Chapters:
+        </h2>
+            <p>
+                {{  serie.numberChapters  }}
+            </p>
+        <h2>
+            Popularity:
+        </h2>
+            <p>
+                {{  serie.popularity  }}
+            </p>
+        <h2>
+            Url:
+        </h2>
+            <p>
+                {{  serie.url  }}
+            </p>
+
+<h2>Reviews</h2>
+    <ul>
+        {%  for  review  in  serie.seriereview_set.all  %}
+            <li>
+                <p>{{  review.rating  }}  star{{  review.rating|pluralize  }}</p>
+                <p>{{  review.comment  }}</p>
+                <p>Created  by  {{  review.user  }}  on  {{  review.date  }}</p>
+            </li>
+        {%  endfor  %}
+    </ul>
+        <h3>Add Review</h3>
+            <form  action="{%  url  'FilmRevolutionApp:review_serie_create'  movie.id  %}"  method="post">
+            {%  csrf_token  %}
+                Message:  <textarea  name="comment"  id="comment"  rows="4"></textarea>
+                <p>Rating:</p>
+                <p>{%  for  rate  in  RATING_CHOICES  %}
+                    <input  type="radio"  name="rating"  id="rating{{  forloop.counter  }}"  value="{{  rate.0}}"  />
+                    <label  for="choice{{  forloop.counter  }}">{{  rate.1}}  star{{  rate.0|pluralize  }}</label>
+                    <br/>
+                {%  endfor  %}
+                </p>
+            <input  type="submit"  value="Review"  />
+            </form>
+    {%  endblock  %}
+{%  block  footer  %}
+    Created  by  {{  serie.user  }}  on  {{  serie.date  }}
+{%  endblock  %}

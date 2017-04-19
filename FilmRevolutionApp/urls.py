@@ -3,7 +3,8 @@ from django.utils import timezone
 from django.views.generic import DetailView, ListView, UpdateView
 from models import Movie, Serie, Director, Actor, Platform, Production, MovieReview, SerieReview
 from forms import MovieForm, SerieForm
-from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, review
+from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
+    DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, review
 
 urlpatterns = [
     # List latest 5 movies: /movies/
