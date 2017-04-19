@@ -101,7 +101,6 @@ def review(request, pk):
     return HttpResponseRedirect(reverse('FilmRevolutionApp:Movie_detail',
                                         args=(movie.id,)))
 
-"""
 def reviewS(request, pk):
     serie = get_object_or_404(Serie, pk=pk)
     review = SerieReview(
@@ -112,4 +111,3 @@ def reviewS(request, pk):
     review.save()
     return HttpResponseRedirect(reverse('FilmRevolutionApp:Serie_detail',
                                         args=(serie.id,)))
-"""
