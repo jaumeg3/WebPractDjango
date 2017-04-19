@@ -1,8 +1,8 @@
 from django.conf.urls import url
 from django.utils import timezone
 from django.views.generic import DetailView, ListView, UpdateView
-from models import Movie, Serie, Director, Actor, Platform, Production, MovieReview, SerieReview
-from forms import MovieForm, SerieForm
+from models import Movie, Serie, Director, Actor, Platform, Production
+from forms import  MovieForm, SerieForm, DirectorForm, ActorForm, PlatformForm, ProductionForm
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
     DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, review
 
@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^movies/(?P<pk>\d+)/$',
         MovieDetail.as_view(),
         name='movie_detail'),
-    # Movie details, ex.: /series/1/
+    # Serie details, ex.: /series/1/
     url(r'^series/(?P<pk>\d+)/$',
         SerieDetail.as_view(),
         name='serie_detail'),
