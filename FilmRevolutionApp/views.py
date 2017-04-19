@@ -53,7 +53,7 @@ class SerieCreate(CreateView):
 
 class DirectorDetail(DetailView):
     model = Director
-    #template_name = 'FilmRevolutionApp/form.html'
+    template_name = 'directors/form.html'
 
     def get_context_data(self, **kwargs):
         context = super(DirectorDetail, self).get_context_data(**kwargs)
@@ -62,7 +62,7 @@ class DirectorDetail(DetailView):
 
 class ActorDetail(DetailView):
     model = Actor
-    #template_name = 'FilmRevolutionApp/form.html'
+    template_name = 'actors/form.html'
 
     def get_context_data(self, **kwargs):
         context = super(ActorDetail, self).get_context_data(**kwargs)
@@ -72,7 +72,7 @@ class ActorDetail(DetailView):
 
 class ProductionDetail(DetailView):
     model = Production
-    #template_name = 'FilmRevolutionApp/form.html'
+    template_name = 'production/form.html'
 
     def get_context_data(self, **kwargs):
         context = super(ProductionDetail, self).get_context_data(**kwargs)
@@ -82,7 +82,7 @@ class ProductionDetail(DetailView):
 
 class PlatformDetail(DetailView):
     model = Platform
-    #template_name = 'FilmRevolutionApp/form.html'
+    template_name = 'platform/form.html'
 
     def get_context_data(self, **kwargs):
         context = super(PlatformDetail, self).get_context_data(**kwargs)
