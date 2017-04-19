@@ -74,10 +74,10 @@ urlpatterns = [
         name='series_edit'),
     # Create a movie review, ex.: /movie/1/reviews/create/
     url(r'^movies/(?P<pk>\d+)/reviews/create/$',
-        review,
+        reviewM,
         name='review_movie_create'),
     # Create a serie review, ex.: /series/1/reviews/create/
     url(r'^series/(?P<pk>\d+)/reviews/create/$',
-        review,
+        reviewS,
         name='review_serie_create'),
 ]
