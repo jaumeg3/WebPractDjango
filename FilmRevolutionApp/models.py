@@ -46,7 +46,7 @@ class Actor(models.Model):
     name = models.TextField()
     age = models.IntegerField()
     birthday = models.TextField()
-    deathday = models.TextField()
+    deathday = models.TextField(blank=True, null=True)
     gender = models.TextField()
     place = models.TextField()
     serie = models.ForeignKey(Serie, null=True, related_name="ActorS")
