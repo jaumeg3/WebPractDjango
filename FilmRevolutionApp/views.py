@@ -1,5 +1,6 @@
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, render_to_response
+from django.http import HttpResponseRedirect,HttpResponse, Http404
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView
@@ -12,6 +13,9 @@ from forms import MovieForm, SerieForm, DirectorForm, ActorForm, \
 # Create your views here.
 
 def mainpage():
+    return render_to_response(
+        'base.html', {}
+    )
 
 class MovieDetail(DetailView):
     model = Movie
