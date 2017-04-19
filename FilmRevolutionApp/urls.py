@@ -8,7 +8,10 @@ from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
 
 urlpatterns = [
     # List latest 5 movies: /movies/
-    url(r'^/movies/$',
+    url(r'^$', ListView.as_view(
+        template_name='base.html'
+    )),
+    url(r'^movies/$',
         ListView.as_view(
             queryset=Movie.objects.filter(
                 date__lte=timezone.now()).order_by('date')[:5],
@@ -16,7 +19,7 @@ urlpatterns = [
             template_name='movies/movie_list.html'),
         name='movie_list'),
     # List latest 5 series: /series/
-    url(r'^/series/$',
+    url(r'^series/$',
         ListView.as_view(
             queryset=Serie.objects.filter(
                 date__lte=timezone.now()).order_by('date')[:5],

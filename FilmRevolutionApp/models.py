@@ -14,7 +14,7 @@ class Movie(models.Model):
     popularity = models.IntegerField()
     country = models.TextField(blank=True, null=True)
     date = models.DateField(default=date.today)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, default=1)
 
     def __unicode__(self):
         return u"%s" % self.title
@@ -32,7 +32,7 @@ class Serie(models.Model):
     numberSeasons = models.IntegerField()
     numberChapters = models.IntegerField()
     date = models.DateField(default=date.today)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, default=1)
 
     def __unicode__(self):
         return u"%s" % self.title
