@@ -48,7 +48,7 @@
         {%  endfor  %}
     </ul>
         <h3>Add Review</h3>
-            <form  action="{%  url  'FilmRevolutionApp:review_serie_create'  movie.id  %}"  method="post">
+            <form  action="{%  url  'FilmRevolutionApp:review_serie_create'  serie.id  %}"  method="post">
             {%  csrf_token  %}
                 Message:  <textarea  name="comment"  id="comment"  rows="4"></textarea>
                 <p>Rating:</p>

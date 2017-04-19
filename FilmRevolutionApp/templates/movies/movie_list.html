@@ -3,13 +3,13 @@
         <h1>
             Movies
             {%  if  user  %}
-                (<a  href="{%  url  'Film Revolution App:movie_create'  %}">add</a>)
+                (<a  href="{%  url  'FilmRevolutionApp:movie_create'  %}">add</a>)
             {%  endif  %}
         </h1>
         <ul>
             {%  for  movie  in  latest_movie_list  %}
                 <li>
-                    <a  href="{%  url  'Film Revolution App:movie_detail'  movie.id  %}"> {{  movie.title  }}
+                    <a  href="{%  url  'FilmRevolutionApp:movie_detail'  movie.id  %}"> {{  movie.title  }}
                     </a>
                 </li>
             {%  empty  %}

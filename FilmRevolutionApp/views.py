@@ -13,9 +13,7 @@ from forms import MovieForm, SerieForm, DirectorForm, ActorForm, \
 # Create your views here.
 
 def mainpage(request):
-    return render_to_response(
-        'base.html', {}
-    )
+    return render_to_response('base.html')
 
 class MovieDetail(DetailView):
     model = Movie
