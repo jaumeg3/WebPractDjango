@@ -12,7 +12,7 @@ from forms import MovieForm, SerieForm, DirectorForm, ActorForm, \
 
 # Create your views here.
 
-def mainpage():
+def mainpage(request):
     return render_to_response(
         'base.html', {}
     )

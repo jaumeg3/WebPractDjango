@@ -5,7 +5,7 @@ from models import Movie, Serie
 from forms import MovieForm, SerieForm
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
     DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, reviewM, \
-    reviewS,
+    reviewS, mainpage
 
 urlpatterns = [
     # List latest 5 movies: /movies/
