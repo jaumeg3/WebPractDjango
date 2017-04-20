@@ -49,8 +49,10 @@ class Actor(models.Model):
     deathday = models.TextField(blank=True, null=True)
     gender = models.TextField()
     place = models.TextField()
-    serie = models.ForeignKey(Serie, null=True, related_name="ActorS")
-    movie = models.ForeignKey(Movie, null=True, related_name="ActorM")
+    serie = models.ForeignKey(Serie, blank=True, null=True,
+                              related_name="ActorS")
+    movie = models.ForeignKey(Movie, blank=True, null=True,
+                              related_name="ActorM")
 
     def __unicode__(self):
         return u"%s" % self.name
@@ -65,11 +67,13 @@ class Director(models.Model):
     name = models.TextField()
     age = models.IntegerField()
     birthday = models.TextField()
-    deathday = models.TextField()
+    deathday = models.TextField(blank=True)
     gender = models.TextField()
     place = models.TextField()
-    serie = models.ForeignKey(Serie, null=True, related_name="DirectorS")
-    movie = models.ForeignKey(Movie, null=True, related_name="DirectorM")
+    serie = models.ForeignKey(Serie, blank=True, null=True,
+                              related_name="DirectorS")
+    movie = models.ForeignKey(Movie, blank=True, null=True,
+                              related_name="DirectorM")
 
     def __unicode__(self):
         return u"%s" % self.name
