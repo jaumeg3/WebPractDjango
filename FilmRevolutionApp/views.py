@@ -99,7 +99,7 @@ def reviewM(request, pk):
         user=request.user,
         movie=movie)
     reviews.save()
-    return HttpResponseRedirect(reverse('FilmRevolutionApp:Movie_detail',
+    return HttpResponseRedirect(reverse('FilmRevolutionApp:movie_detail',
                                         args=(movie.id,)))
 
 
@@ -111,5 +111,5 @@ def reviewS(request, pk):
         user=request.user,
         serie=serie)
     review.save()
-    return HttpResponseRedirect(reverse('FilmRevolutionApp:Serie_detail',
+    return HttpResponseRedirect(reverse('FilmRevolutionApp:serie_detail',
                                         args=(serie.id,)))
