@@ -1,19 +1,19 @@
 from django.core.urlresolvers import reverse
-from django.shortcuts import render, render_to_response
-from django.http import HttpResponseRedirect,HttpResponse, Http404
+from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView
 from models import MovieReview, SerieReview, Movie, Serie, Director, Actor, \
     Production, Platform
-from forms import MovieForm, SerieForm, DirectorForm, ActorForm, \
-    ProductionForm, PlatformForm
+from forms import MovieForm, SerieForm
 
 
 # Create your views here.
 
 def mainpage(request):
     return render_to_response('base.html')
+
 
 class MovieDetail(DetailView):
     model = Movie
@@ -27,7 +27,7 @@ class MovieDetail(DetailView):
 
 class MovieCreate(CreateView):
     model = Movie
-    #template_name = 'movies/form.html'
+    template_name = 'movies/form.html'
     form_class = MovieForm
 
     def form_valid(self, form):
@@ -47,7 +47,7 @@ class SerieDetail(DetailView):
 
 class SerieCreate(CreateView):
     model = Serie
-    #template_name = 'FilmRevolutionApp/form.html'
+    template_name = 'series/form.html'
     form_class = SerieForm
 
     def form_valid(self, form):
@@ -73,7 +73,6 @@ class ActorDetail(DetailView):
         return context
 
 
-
 class ProductionDetail(DetailView):
     model = Production
     template_name = 'production/form.html'
@@ -83,7 +82,6 @@ class ProductionDetail(DetailView):
         return context
 
 
-
 class PlatformDetail(DetailView):
     model = Platform
     template_name = 'platform/form.html'
@@ -91,7 +89,6 @@ class PlatformDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super(PlatformDetail, self).get_context_data(**kwargs)
         return context
-
 
 
 def reviewM(request, pk):
@@ -104,6 +101,7 @@ def reviewM(request, pk):
     reviews.save()
     return HttpResponseRedirect(reverse('FilmRevolutionApp:Movie_detail',
                                         args=(movie.id,)))
+
 
 def reviewS(request, pk):
     serie = get_object_or_404(Serie, pk=pk)

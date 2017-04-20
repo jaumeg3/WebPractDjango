@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^movies/(?P<pk>\d+)/$',
         MovieDetail.as_view(),
         name='movie_detail'),
-    # Movie details, ex.: /series/1/
+    # Series details, ex.: /series/1/
     url(r'^series/(?P<pk>\d+)/$',
         SerieDetail.as_view(),
         name='serie_detail'),
