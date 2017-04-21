@@ -7,6 +7,7 @@ from datetime import date
 # Create your models here.
 
 class Movie(models.Model):
+    '''Atributes of Movie '''
     title = models.TextField()
     budget = models.TextField()
     genere = models.TextField()
@@ -25,6 +26,7 @@ class Movie(models.Model):
 
 
 class Serie(models.Model):
+    '''Atributes of Serie '''
     title = models.TextField()
     genere = models.TextField()
     url = models.URLField()
@@ -43,6 +45,7 @@ class Serie(models.Model):
 
 
 class Actor(models.Model):
+    '''Atributes of Actor '''
     name = models.TextField()
     age = models.IntegerField()
     birthday = models.TextField()
@@ -64,6 +67,7 @@ class Actor(models.Model):
 
 
 class Director(models.Model):
+    '''Atributes of Director '''
     name = models.TextField()
     age = models.IntegerField()
     birthday = models.TextField()
@@ -85,6 +89,7 @@ class Director(models.Model):
 
 
 class Review(models.Model):
+    '''Atributes of Review '''
     RATING_CHOICES = (
         (1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'))
     rating = models.PositiveSmallIntegerField('Rating (stars)',
@@ -100,6 +105,7 @@ class Review(models.Model):
 
 
 class Platform(models.Model):
+    '''Atributes of Platform '''
     name = models.TextField()
     url = models.URLField()
     serie = models.ForeignKey(Serie, null=True)
@@ -113,6 +119,7 @@ class Platform(models.Model):
 
 
 class Production(models.Model):
+    '''Atributes of Production '''
     name = models.TextField()
     url = models.URLField()
     movie = models.ForeignKey(Movie, null=True)
@@ -126,8 +133,10 @@ class Production(models.Model):
 
 
 class MovieReview(Review):
+    '''Review about Movie '''
     movie = models.ForeignKey(Movie)
 
 
 class SerieReview(Review):
+    '''Review of Serie '''
     serie = models.ForeignKey(Serie)
