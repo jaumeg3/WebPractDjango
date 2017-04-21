@@ -5,6 +5,8 @@ Django Application for movies and series.
 
 In order to run the application, you must run the command
 
+    `python manage.py makemigrations`
+    `python manage.py migrate`
     `python manage.py runserver`
 
 After that, you have different pages to interact with the application:
@@ -16,9 +18,9 @@ After that, you have different pages to interact with the application:
 There are some features that are not implemented yet like the details for the
 actors, directors, platforms,...
 
-## Requeriments
+## Requirements
 
-In the `requeriments.txt` file, you can see the requeriments for the application
+In the `requirements.txt` file, you can see the requeriments for the application
 
 ## Deployment Schema
 
