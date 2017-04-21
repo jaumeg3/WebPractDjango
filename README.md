@@ -19,3 +19,6 @@ actors, directors, platforms,...
 ## Requeriments
 
 In the `requeriments.txt` file, you can see the requeriments for the application
+
+## Deployment Schema
+
