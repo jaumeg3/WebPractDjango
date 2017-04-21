@@ -12,10 +12,12 @@ from forms import MovieForm, SerieForm
 # Create your views here.
 
 def mainpage(request):
+    '''This function return the view of the mainpage of the application'''
     return render_to_response('base.html')
 
 
 class MovieDetail(DetailView):
+    '''This function return the detail view for a movie instance'''
     model = Movie
     template_name = 'movies/movie_detail.html'
 
@@ -26,6 +28,7 @@ class MovieDetail(DetailView):
 
 
 class MovieCreate(CreateView):
+    '''This function return a create view to create a movie instance'''
     model = Movie
     template_name = 'movies/form.html'
     form_class = MovieForm
@@ -36,6 +39,7 @@ class MovieCreate(CreateView):
 
 
 class SerieDetail(DetailView):
+    '''This function return the detail view for a serie instance'''
     model = Serie
     template_name = 'series/serie_detail.html'
 
@@ -46,6 +50,7 @@ class SerieDetail(DetailView):
 
 
 class SerieCreate(CreateView):
+    '''This function return a create view to create a serie instance'''
     model = Serie
     template_name = 'series/form.html'
     form_class = SerieForm
@@ -56,6 +61,7 @@ class SerieCreate(CreateView):
 
 
 class DirectorDetail(DetailView):
+    '''This function return the detail view for a director instance'''
     model = Director
     template_name = 'directors/form.html'
 
@@ -65,6 +71,7 @@ class DirectorDetail(DetailView):
 
 
 class ActorDetail(DetailView):
+    '''This function return the detail view for a actor instance'''
     model = Actor
     template_name = 'actors/form.html'
 
@@ -74,6 +81,7 @@ class ActorDetail(DetailView):
 
 
 class ProductionDetail(DetailView):
+    '''This function return the detail view for a production instance'''
     model = Production
     template_name = 'production/form.html'
 
@@ -83,6 +91,7 @@ class ProductionDetail(DetailView):
 
 
 class PlatformDetail(DetailView):
+    '''This function return the detail view for a platform instance'''
     model = Platform
     template_name = 'platform/form.html'
 
@@ -92,6 +101,7 @@ class PlatformDetail(DetailView):
 
 
 def reviewM(request, pk):
+    '''This function return the detail view for a movie review instance'''
     movie = get_object_or_404(Movie, pk=pk)
     reviews = MovieReview(
         rating=request.POST['rating'],
@@ -104,6 +114,7 @@ def reviewM(request, pk):
 
 
 def reviewS(request, pk):
+    '''This function return the detail view for a serie review instance'''
     serie = get_object_or_404(Serie, pk=pk)
     review = SerieReview(
         rating=request.POST['rating'],
