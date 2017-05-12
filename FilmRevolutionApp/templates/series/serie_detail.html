@@ -4,6 +4,7 @@
             {{  serie.title  }}
                 {%  if  user  ==  serie.user  %}
                     (<a  href="{%  url  'FilmRevolutionApp:series_edit'  serie.id  %}">edit</a>)
+                    (<a  href="{%  url  'FilmRevolutionApp:series_delete'  serie.id  %}">delete</a>)
                 {%  endif  %}
         </h1>
         <h2>

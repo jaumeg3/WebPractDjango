@@ -5,7 +5,7 @@ from models import Movie, Serie
 from forms import MovieForm, SerieForm
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
     DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, reviewM, \
-    reviewS, mainpage
+    reviewS, mainpage, deleteM, deleteS
 
 urlpatterns = [
     # List latest 5 movies: /movies/
@@ -61,14 +61,14 @@ urlpatterns = [
     url(r'^movies/(?P<pk>\d+)/edit/$',
         UpdateView.as_view(
             model=Movie,
-            template_name='movies/movie_detail.html',
+            template_name='movies/form.html',
             form_class=MovieForm),
         name='movies_edit'),
     # Edit serie details, ex.: /movies/1/edit/
     url(r'^series/(?P<pk>\d+)/edit/$',
         UpdateView.as_view(
             model=Serie,
-            template_name='series/serie_detail.html',
+            template_name='series/form.html',
             form_class=SerieForm),
         name='series_edit'),
     # Create a movie review, ex.: /movie/1/reviews/create/
@@ -79,4 +79,10 @@ urlpatterns = [
     url(r'^series/(?P<pk>\d+)/reviews/create/$',
         reviewS,
         name='review_serie_create'),
+    url(r'^movies/(?P<pk>\d+)/delete/$',
+        deleteM,
+        name='movies_delete'),
+    url(r'^series/(?P<pk>\d+)/delete/$',
+        deleteS,
+        name='series_delete'),
 ]

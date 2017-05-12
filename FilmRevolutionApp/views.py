@@ -124,3 +124,16 @@ def reviewS(request, pk):
     review.save()
     return HttpResponseRedirect(reverse('FilmRevolutionApp:serie_detail',
                                         args=(serie.id,)))
+
+
+def deleteM(request, pk):
+    '''This function deletes an instance of movie'''
+    movie = get_object_or_404(Movie, pk=pk)
+    movie.delete()
+    return HttpResponseRedirect(reverse('FilmRevolutionApp:movie_list'))
+
+def deleteS(request, pk):
+    '''This function deletes an instance of movie'''
+    serie = get_object_or_404(Serie, pk=pk)
+    serie.delete()
+    return HttpResponseRedirect(reverse('FilmRevolutionApp:serie_list'))
