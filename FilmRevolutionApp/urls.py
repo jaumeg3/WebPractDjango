@@ -1,11 +1,13 @@
-from django.conf.urls import url
+from django.conf.urls import url, include, patterns
 from django.utils import timezone
 from django.views.generic import ListView, UpdateView
 from models import Movie, Serie
 from forms import MovieForm, SerieForm
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
     DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, reviewM, \
-    reviewS, mainpage, deleteM, deleteS
+    reviewS, mainpage, deleteM, deleteS, MovieDetailAPI, MovieListAPI, \
+    SerieDetailAPI, SerieListAPI, api_view
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     # List latest 5 movies: /movies/
@@ -85,4 +87,26 @@ urlpatterns = [
     url(r'^series/(?P<pk>\d+)/delete/$',
         deleteS,
         name='series_delete'),
+    url(r'^api/movies$',
+        MovieListAPI.as_view(),
+        name='movie-list'),
+    url(r'^api/movies/(?P<pk>\d+)/$',
+        MovieDetailAPI.as_view(),
+        name='movie-detail'),
+    url(r'^api/series$',
+        SerieListAPI.as_view(),
+        name='serie-list'),
+    url(r'^api/series/(?P<pk>\d+)/$',
+        SerieDetailAPI.as_view(),
+        name='serie-detail'),
 ]
+
+#	Format	suffixes
+
+urlpatterns = format_suffix_patterns(urlpatterns, allowed=['json', 'api'])
+
+#	Default	login/logout	views
+
+urlpatterns += patterns('', url(r'^api-auth/',
+                                include('rest_framework.urls',
+                                        namespace='rest_framework')))

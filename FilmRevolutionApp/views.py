@@ -7,7 +7,11 @@ from django.views.generic.edit import CreateView
 from models import MovieReview, SerieReview, Movie, Serie, Director, Actor, \
     Production, Platform
 from forms import MovieForm, SerieForm
-
+from rest_framework import generics
+from rest_framework.decorators import api_view
+from rest_framework.reverse import reverse
+from rest_framework.response import Response
+from serializers import MovieSerializer,SerieSerializer
 
 # Create your views here.
 
@@ -137,3 +141,47 @@ def deleteS(request, pk):
     serie = get_object_or_404(Serie, pk=pk)
     serie.delete()
     return HttpResponseRedirect(reverse('FilmRevolutionApp:serie_list'))
+
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'movie': reverse('movie-list', request=request),
+        'serie': reverse('serie-list', request=request),
+    })
+
+
+class MovieListAPI(generics.ListCreateAPIView):
+    """
+    API	endpoint that represents a list	of	author.
+    """
+    model = Movie
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+
+
+class MovieDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    API	endpoint that represents a single author.
+    """
+    model = Movie
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+
+
+class SerieListAPI(generics.ListCreateAPIView):
+    """
+    API	endpoint that represents a list of books.
+    """
+    model = Serie
+    queryset = Serie.objects.all()
+    serializer_class = SerieSerializer
+
+
+class SerieDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    API	endpoint	that	represents	a	single	books.
+    """
+    model = Serie
+    queryset = Serie.objects.all()
+    serializer_class = SerieSerializer
