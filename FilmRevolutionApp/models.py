@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from datetime import date
-from rest_framework import serializers
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
@@ -13,7 +13,8 @@ class Movie(models.Model):
     budget = models.TextField()
     genere = models.TextField()
     url = models.URLField()
-    popularity = models.IntegerField()
+    popularity = models.IntegerField(validators=[MaxValueValidator(100),
+                                                 MinValueValidator(1)])
     country = models.TextField(blank=True, null=True)
     date = models.DateField(default=date.today)
     user = models.ForeignKey(User, default=1)
@@ -31,9 +32,10 @@ class Serie(models.Model):
     title = models.TextField()
     genere = models.TextField()
     url = models.URLField()
-    popularity = models.IntegerField()
-    numberSeasons = models.IntegerField()
-    numberChapters = models.IntegerField()
+    popularity = models.IntegerField(validators=[MaxValueValidator(100),
+                                                 MinValueValidator(1)])
+    numberSeasons = models.IntegerField(validators=[MinValueValidator(1)])
+    numberChapters = models.IntegerField(validators=[MinValueValidator(1)])
     date = models.DateField(default=date.today)
     user = models.ForeignKey(User, default=1)
 
