@@ -1,8 +1,8 @@
 {%  extends  "series/base.html"  %}
     {%  block  content  %}
         <h1>
-            Movies
-            {%  if  user  %}
+            Series
+            {%  if  user.is_authenticated  %}
                 (<a  href="{%  url  'FilmRevolutionApp:serie_create'  %}">add</a>)
             {%  endif  %}
         </h1>
