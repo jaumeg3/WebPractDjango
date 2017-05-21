@@ -1,12 +1,12 @@
 from django.conf.urls import url, include, patterns
 from django.utils import timezone
 from django.views.generic import ListView, UpdateView
-from models import Movie, Serie
-from forms import MovieForm, SerieForm
+from models import Movie, Serie, Actor
+from forms import MovieForm, SerieForm, ActorForm
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
     DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, reviewM, \
     reviewS, mainpage, deleteM, deleteS, MovieDetailAPI, MovieListAPI, \
-    SerieDetailAPI, SerieListAPI, api_view
+    SerieDetailAPI, SerieListAPI
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
@@ -39,6 +39,19 @@ urlpatterns = [
     url(r'^actors/(?P<pk>\d+)/$',
         ActorDetail.as_view(),
         name='actor_detail'),
+    url(r'^actors/$',
+        ListView.as_view(
+            queryset=Actor.objects.filter(
+                date__lte=timezone.now()).order_by('date')[:5],
+            context_object_name='latest_actor_list',
+            template_name='actors/actor_list.html'),
+        name='actor_list'),
+    url(r'^actors/(?P<pk>\d+)/edit/$',
+        UpdateView.as_view(
+            model=Actor,
+            template_name='actors/form.html',
+            form_class=ActorForm,),
+        name='actor_edit'),
     # Director details, ex.: /directors/1/
     url(r'^directors/(?P<pk>\d+)/$',
         DirectorDetail.as_view(),

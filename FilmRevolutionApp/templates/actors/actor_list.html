@@ -1,0 +1,16 @@
+{%  extends  "base.html"  %}
+    {%  block  content  %}
+        <h1>
+            Actors
+        </h1>
+        <ul>
+            {%  for  actor  in  latest_actor_list  %}
+                <li>
+                    <a  href="{%  url  'FilmRevolutionApp:actor_detail'  actor.id  %}"> {{  actor.name  }}
+                    </a>
+                </li>
+            {%  empty  %}
+                <li>Sorry,  no  movies  registered  yet.</li>
+            {%  endfor  %}
+        </ul>
+    {%  endblock  %}

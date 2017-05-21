@@ -1,4 +1,4 @@
-{%  extends  "series/base.html"  %}
+{%  extends  "base.html"  %}
     {%  block  content  %}
         <h1>
             {{  serie.title  }}
@@ -36,6 +36,12 @@
         </h2>
             <p>
                 {{  serie.url  }}
+            </p>
+        <h2>
+            Platform:
+        </h2>
+            <p>
+                {{ serie.platform }}
             </p>
 
 <h2>Reviews</h2>

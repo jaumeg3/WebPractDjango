@@ -1,0 +1,66 @@
+{%  extends  "base.html" %}
+    {%  block  content  %}
+        <h1>
+            {{  actor.name  }}
+                {%  if  user  ==  actor.user  %}
+                    (<a  href="{%  url  'FilmRevolutionApp:actor_edit'  actor.id %}">edit</a>)
+                {%  endif  %}
+        </h1>
+        <h2>
+            Age:
+        </h2>
+            <p>
+                {{  actor.age  }}
+            </p>
+        <h2>
+            Birthday:
+        </h2>
+            <p>
+                {{  actor.birthday  }}
+            </p>
+        <h2>
+            Death day:
+        </h2>
+            <p>
+                {{  actor.deathday  }}
+            </p>
+        <h2>
+            Gender:
+        </h2>
+            <p>
+                {{  actor.gender  }}
+            </p>
+        <h2>
+            City:
+        </h2>
+            <p>
+                {{  actor.city  }}
+            </p>
+        <h2>
+            State:
+        </h2>
+            <p>
+                {{  actor.state  }}
+            </p>
+        <h2>
+            Country:
+        </h2>
+            <p>
+                {{  actor.country  }}
+            </p>
+        <h2>
+            Serie:
+        </h2>
+            <p>
+                {{  actor.serie  }}
+            </p>
+        <h2>
+            Movie:
+        </h2>
+            <p>
+                {{  actor.movie  }}
+            </p>
+    {%  endblock  %}
+{%  block  footer  %}
+    Created  by  {{  actor.user  }}  on  {{  actor.date  }}
+{%  endblock  %}

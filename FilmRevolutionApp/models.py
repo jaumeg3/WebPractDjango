@@ -7,6 +7,34 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
+class Platform(models.Model):
+    '''Atributes of Platform '''
+    name = models.TextField()
+    url = models.URLField()
+    date = models.DateField(default=date.today)
+
+    def __unicode__(self):
+        return u"%s" % self.name
+
+    def get_absolute_url(self):
+        return reverse('FilmRevolutionApp:platform_detail',
+                       kwargs={'pks': self.serie.pk, 'pk': self.pk})
+
+
+class Production(models.Model):
+    '''Atributes of Production '''
+    name = models.TextField()
+    url = models.URLField()
+    date = models.DateField(default=date.today)
+
+    def __unicode__(self):
+        return u"%s" % self.name
+
+    def get_absolute_url(self):
+        return reverse('FilmRevolutionApp:actor_detail',
+                       kwargs={'pkm': self.movie.pk, 'pk': self.pk})
+
+
 class Movie(models.Model):
     '''Atributes of Movie '''
     title = models.TextField()
@@ -18,6 +46,7 @@ class Movie(models.Model):
     country = models.TextField(blank=True, null=True)
     date = models.DateField(default=date.today)
     user = models.ForeignKey(User, default=1)
+    productor = models.ForeignKey(Production, null=True)
 
     def __unicode__(self):
         return u"%s" % self.title
@@ -38,6 +67,7 @@ class Serie(models.Model):
     numberChapters = models.IntegerField(validators=[MinValueValidator(1)])
     date = models.DateField(default=date.today)
     user = models.ForeignKey(User, default=1)
+    platform = models.ForeignKey(Platform, null=True)
 
     def __unicode__(self):
         return u"%s" % self.title
@@ -50,15 +80,24 @@ class Serie(models.Model):
 class Actor(models.Model):
     '''Atributes of Actor '''
     name = models.TextField()
-    age = models.IntegerField()
-    birthday = models.TextField()
-    deathday = models.TextField(blank=True, null=True)
-    gender = models.TextField()
-    place = models.TextField()
+    age = models.IntegerField(validators=[MaxValueValidator(120),
+                                          MinValueValidator(1)])
+    birthday = models.DateField()
+    deathday = models.DateField(blank=True, null=True)
+    GENDER_CHOICES = (
+        ('Male', 'Male'),
+        ('Female', 'Female'),
+    )
+    gender = models.CharField(choices=GENDER_CHOICES, max_length=6)
+    city = models.TextField(default="")
+    state = models.TextField(blank=True, null=True)
+    country = models.TextField(blank=True, null=True)
     serie = models.ForeignKey(Serie, blank=True, null=True,
                               related_name="ActorS")
     movie = models.ForeignKey(Movie, blank=True, null=True,
                               related_name="ActorM")
+    date = models.DateField(default=date.today)
+    user = models.ForeignKey(User, default=1)
 
     def __unicode__(self):
         return u"%s" % self.name
@@ -72,23 +111,31 @@ class Actor(models.Model):
 class Director(models.Model):
     '''Atributes of Director '''
     name = models.TextField()
-    age = models.IntegerField()
-    birthday = models.TextField()
-    deathday = models.TextField(blank=True)
-    gender = models.TextField()
-    place = models.TextField()
+    age = models.IntegerField(validators=[MaxValueValidator(120),
+                                          MinValueValidator(1)])
+    birthday = models.DateField()
+    deathday = models.DateField(blank=True, null=True)
+    GENDER_CHOICES = (
+        ('Male', 'Male'),
+        ('Female', 'Female'),
+    )
+    gender = models.CharField(choices=GENDER_CHOICES, max_length=6)
+    city = models.TextField(default="")
+    state = models.TextField(blank=True, null=True)
+    country = models.TextField(blank=True, null=True)
     serie = models.ForeignKey(Serie, blank=True, null=True,
                               related_name="DirectorS")
     movie = models.ForeignKey(Movie, blank=True, null=True,
                               related_name="DirectorM")
+    date = models.DateField(default=date.today)
+    user = models.ForeignKey(User, default=1)
 
     def __unicode__(self):
         return u"%s" % self.name
 
     def get_absolute_url(self):
         return reverse('FilmRevolutionApp:director_detail',
-                       kwargs={'pkm': self.movie.pk, 'pks': self.serie.pk,
-                               'pk': self.pk})
+                       kwargs={'pk': self.pk})
 
 
 class Review(models.Model):
@@ -105,34 +152,6 @@ class Review(models.Model):
 
     class Meta:
         abstract = True
-
-
-class Platform(models.Model):
-    '''Atributes of Platform '''
-    name = models.TextField()
-    url = models.URLField()
-    serie = models.ForeignKey(Serie, null=True)
-
-    def __unicode__(self):
-        return u"%s" % self.name
-
-    def get_absolute_url(self):
-        return reverse('FilmRevolutionApp:platform_detail',
-                       kwargs={'pks': self.serie.pk, 'pk': self.pk})
-
-
-class Production(models.Model):
-    '''Atributes of Production '''
-    name = models.TextField()
-    url = models.URLField()
-    movie = models.ForeignKey(Movie, null=True)
-
-    def __unicode__(self):
-        return u"%s" % self.name
-
-    def get_absolute_url(self):
-        return reverse('FilmRevolutionApp:actor_detail',
-                       kwargs={'pkm': self.movie.pk, 'pk': self.pk})
 
 
 class MovieReview(Review):

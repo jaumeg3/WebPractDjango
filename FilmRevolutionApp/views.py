@@ -17,7 +17,7 @@ from serializers import MovieSerializer,SerieSerializer
 
 def mainpage(request):
     '''This function return the view of the mainpage of the application'''
-    return render_to_response('base.html')
+    return render_to_response('main.html')
 
 
 class MovieDetail(DetailView):
@@ -77,11 +77,15 @@ class DirectorDetail(DetailView):
 class ActorDetail(DetailView):
     '''This function return the detail view for a actor instance'''
     model = Actor
-    template_name = 'actors/form.html'
+    template_name = 'actors/actor_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(ActorDetail, self).get_context_data(**kwargs)
         return context
+
+    def get_success_url(self):
+        print "Successfully posted"
+        return reverse('actors:actor_detail', kwargs={'pk': self.object.pk})
 
 
 class ProductionDetail(DetailView):
