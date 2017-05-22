@@ -19,23 +19,26 @@ class SerieForm(ModelForm):
 
 
 class DirectorForm(ModelForm):
-    '''Director Form that exclude user, date, movie, serie atributes from the model'''
+    '''Director Form that exclude user, date, movie, serie atributes from the 
+    model'''
     class Meta:
         model = Director
         fields = "__all__"
-        exclude = ('user', 'date', 'movie', 'serie')
+        exclude = ('user', 'date')
 
 
 class ActorForm(ModelForm):
-    '''Actor Form that exclude user, date, movie, serie atributes from the model'''
+    '''Actor Form that exclude user, date, movie, serie atributes from the 
+    model'''
     class Meta:
         model = Actor
         fields = "__all__"
-        exclude = ('user', 'date', 'movie', 'serie')
+        exclude = ('user', 'date')
 
 
 class ProductionForm(ModelForm):
-    '''Production Form that exclude user, date, movie atributes from the model'''
+    '''Production Form that exclude user, date, movie atributes from the 
+    model'''
     class Meta:
         model = Production
         fields = "__all__"
@@ -43,7 +46,8 @@ class ProductionForm(ModelForm):
 
 
 class PlatformForm(ModelForm):
-    '''Platform Form that exclude user, date, serie atributes from the model'''
+    '''Platform Form that exclude user, date, serie atributes from the 
+    model'''
     class Meta:
         model = Platform
         fields = "__all__"

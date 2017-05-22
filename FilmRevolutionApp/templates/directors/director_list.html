@@ -2,9 +2,6 @@
     {%  block  content  %}
         <h1>
             Directors
-            {%  if  user.is_authenticated  %}
-                (<a  href="{%  url  'FilmRevolutionApp:director_create'  %}">add</a>)
-            {%  endif  %}
         </h1>
         <ul>
             {%  for  director  in  latest_director_list  %}

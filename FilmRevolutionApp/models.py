@@ -18,7 +18,7 @@ class Platform(models.Model):
 
     def get_absolute_url(self):
         return reverse('FilmRevolutionApp:platform_detail',
-                       kwargs={'pks': self.serie.pk, 'pk': self.pk})
+                       kwargs={'pk': self.pk})
 
 
 class Production(models.Model):
@@ -32,7 +32,7 @@ class Production(models.Model):
 
     def get_absolute_url(self):
         return reverse('FilmRevolutionApp:actor_detail',
-                       kwargs={'pkm': self.movie.pk, 'pk': self.pk})
+                       kwargs={'pk': self.pk})
 
 
 class Movie(models.Model):
@@ -104,8 +104,7 @@ class Actor(models.Model):
 
     def get_absolute_url(self):
         return reverse('FilmRevolutionApp:actor_detail',
-                       kwargs={'pkm': self.movie.pk, 'pks': self.serie.pk,
-                               'pk': self.pk})
+                       kwargs={'pk': self.pk})
 
 
 class Director(models.Model):

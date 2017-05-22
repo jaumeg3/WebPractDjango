@@ -67,7 +67,7 @@ class SerieCreate(CreateView):
 class DirectorDetail(DetailView):
     '''This function return the detail view for a director instance'''
     model = Director
-    template_name = 'directors/form.html'
+    template_name = 'directors/director_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(DirectorDetail, self).get_context_data(**kwargs)

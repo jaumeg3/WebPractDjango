@@ -1,8 +1,8 @@
 from django.conf.urls import url, include, patterns
 from django.utils import timezone
 from django.views.generic import ListView, UpdateView
-from models import Movie, Serie, Actor
-from forms import MovieForm, SerieForm, ActorForm
+from models import Movie, Serie, Actor, Director
+from forms import MovieForm, SerieForm, ActorForm, DirectorForm
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
     DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, reviewM, \
     reviewS, mainpage, deleteM, deleteS, MovieDetailAPI, MovieListAPI, \
@@ -56,6 +56,19 @@ urlpatterns = [
     url(r'^directors/(?P<pk>\d+)/$',
         DirectorDetail.as_view(),
         name='director_detail'),
+    url(r'^directors/$',
+        ListView.as_view(
+            queryset=Director.objects.filter(
+                date__lte=timezone.now()).order_by('date')[:5],
+            context_object_name='latest_director_list',
+            template_name='directors/director_list.html'),
+        name='director_list'),
+    url(r'^directors/(?P<pk>\d+)/edit/$',
+        UpdateView.as_view(
+            model=Director,
+            template_name='directors/form.html',
+            form_class=DirectorForm,),
+        name='director_edit'),
     # Platform details, ex.: /platform/1/
     url(r'^platform/(?P<pk>\d+)/$',
         PlatformDetail.as_view(),
