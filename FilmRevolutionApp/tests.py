@@ -7,9 +7,9 @@ from models import MovieReview, Movie
 class MovieReviewTestCase(TestCase):
     def setUp(self):
         trendy = Movie.objects.create(title="Trendy	Movie", popularity=50)
-        user1 = User.objects.create(user="user1")
-        user2 = User.objects.create(user="user2")
-        user3 = User.objects.create(user="user3")
+        user1 = User.objects.create(username="user1")
+        user2 = User.objects.create(username="user2")
+        user3 = User.objects.create(username="user3")
         MovieReview.objects.create(rating=3, comment="Average...",\
                                    movie=trendy, user=user1)
         MovieReview.objects.create(rating=5, comment="Excellent!",\
