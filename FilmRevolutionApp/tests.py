@@ -23,7 +23,3 @@ class MovieReviewTestCase(TestCase):
         movie = Movie.objects.get(title="Trendy Restaurant")
         self.assertEqual(movie.averageRating(), 3)
 
-    def test_average_no_review(self):
-        """The average	review	for	a Movie	without	reviews	is	0"""
-        movie = Movie.objects.get(title="Unknown Restaurant")
-        self.assertEqual(movie.averageRating(), 0)
