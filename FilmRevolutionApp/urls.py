@@ -1,4 +1,4 @@
-from django.conf.urls import url, include, patterns
+from django.conf.urls import url, include
 from django.utils import timezone
 from django.views.generic import ListView, UpdateView
 from models import Movie, Serie, Actor, Director, Production, Platform
@@ -139,14 +139,11 @@ urlpatterns = [
     url(r'^api/series/(?P<pk>\d+)/$',
         SerieDetailAPI.as_view(),
         name='serie-detail'),
+    url(r'^api-auth/',
+        include('rest_framework.urls',
+                namespace='rest_framework')),
 ]
 
-#	Format	suffixes
+# Format suffixes
 
 urlpatterns = format_suffix_patterns(urlpatterns, allowed=['json', 'api'])
-
-#	Default	login/logout	views
-
-urlpatterns += patterns('', url(r'^api-auth/',
-                                include('rest_framework.urls',
-                                        namespace='rest_framework')))
