@@ -1,0 +1,18 @@
+{%  extends  "base.html" %}
+    {%  block  content  %}
+        <h1>
+            {{  production.name  }}
+                {%  if  user  ==  production.user  %}
+                    (<a  href="{%  url  'FilmRevolutionApp:production_edit'  production.id %}">edit</a>)
+                {%  endif  %}
+        </h1>
+        <h2>
+            Url:
+        </h2>
+            <p>
+                {{  production.url  }}
+            </p>
+    {%  endblock  %}
+{%  block  footer  %}
+    Created  by  {{  production.user  }}  on  {{  production.date  }}
+{%  endblock  %}

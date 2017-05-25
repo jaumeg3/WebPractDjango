@@ -1,7 +1,7 @@
 from django.conf.urls import url, include, patterns
 from django.utils import timezone
 from django.views.generic import ListView, UpdateView
-from models import Movie, Serie, Actor, Director
+from models import Movie, Serie, Actor, Director, Production, Platform
 from forms import MovieForm, SerieForm, ActorForm, DirectorForm
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
     DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, reviewM, \
@@ -73,10 +73,24 @@ urlpatterns = [
     url(r'^platform/(?P<pk>\d+)/$',
         PlatformDetail.as_view(),
         name='platform_detail'),
+    url(r'^platform/$',
+        ListView.as_view(
+            queryset=Platform.objects.filter(
+                date__lte=timezone.now()).order_by('date')[:5],
+            context_object_name='latest_platform_list',
+            template_name='platform/platform_list.html'),
+        name='platform_list'),
     # Production details, ex.: /production/1/
     url(r'^production/(?P<pk>\d+)/$',
         ProductionDetail.as_view(),
         name='production_detail'),
+    url(r'^production/$',
+        ListView.as_view(
+            queryset=Production.objects.filter(
+                date__lte=timezone.now()).order_by('date')[:5],
+            context_object_name='latest_production_list',
+            template_name='production/production_list.html'),
+        name='production_list'),
     # Create a movies, /movies/create/
     url(r'^movies/create/$',
         MovieCreate.as_view(),

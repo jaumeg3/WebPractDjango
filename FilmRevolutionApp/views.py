@@ -91,7 +91,7 @@ class ActorDetail(DetailView):
 class ProductionDetail(DetailView):
     '''This function return the detail view for a production instance'''
     model = Production
-    template_name = 'production/form.html'
+    template_name = 'production/production_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(ProductionDetail, self).get_context_data(**kwargs)
@@ -101,7 +101,7 @@ class ProductionDetail(DetailView):
 class PlatformDetail(DetailView):
     '''This function return the detail view for a platform instance'''
     model = Platform
-    template_name = 'platform/form.html'
+    template_name = 'platform/platform_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(PlatformDetail, self).get_context_data(**kwargs)

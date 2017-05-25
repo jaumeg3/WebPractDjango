@@ -2,9 +2,6 @@
     {%  block  content  %}
         <h1>
             Productions
-            {%  if  user.is_authenticated  %}
-                (<a  href="{%  url  'FilmRevolutionApp:production_create'  %}">add</a>)
-            {%  endif  %}
         </h1>
         <ul>
             {%  for  production  in  latest_production_list  %}

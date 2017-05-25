@@ -2,9 +2,6 @@
     {%  block  content  %}
         <h1>
             Platforms
-            {%  if  user.is_authenticated  %}
-                (<a  href="{%  url  'FilmRevolutionApp:platform_create'  %}">add</a>)
-            {%  endif  %}
         </h1>
         <ul>
             {%  for  platform  in  latest_platform_list  %}

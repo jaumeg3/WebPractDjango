@@ -3,9 +3,10 @@
         <h1>
             Actors
         </h1>
-        <ul>
+        <div id="grid">
+            <ul id="grid">
             {%  for  actor  in  latest_actor_list  %}
-                <li>
+                <li id="grid">
                     <a  href="{%  url  'FilmRevolutionApp:actor_detail'  actor.id  %}"> {{  actor.name  }}
                     </a>
                 </li>
@@ -13,4 +14,5 @@
                 <li>Sorry,  no  movies  registered  yet.</li>
             {%  endfor  %}
         </ul>
+        </div>
     {%  endblock  %}
