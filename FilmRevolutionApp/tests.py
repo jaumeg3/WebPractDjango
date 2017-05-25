@@ -7,21 +7,21 @@ from models import MovieReview, SerieReview, Movie, Serie
 class ReviewTestCase(TestCase):
     def setUp(self):
         trendy = Movie.objects.create(title="Trendy	Movie", popularity=50)
-        top = Serie.objects.create(title = "Top Serie",popularity = 45)
+        top = Serie.objects.create(title="Top Serie", popularity=45)
         user1 = User.objects.create(user="user1")
         user2 = User.objects.create(user="user2")
         user3 = User.objects.create(user="user3")
-        MovieReview.objects.create(rating=3, comment="Average...",\
+        MovieReview.objects.create(rating=3, comment="Average...",
                                    movie=trendy, user=user1)
-        SerieReview.objects.create(rating=3, comment="Average...", \
+        SerieReview.objects.create(rating=3, comment="Average...",
                                    serie=top, user=user1)
-        MovieReview.objects.create(rating=5, comment="Excellent!",\
+        MovieReview.objects.create(rating=5, comment="Excellent!",
                                    movie=trendy, user=user2)
-        SerieReview.objects.create(rating=5, comment="Excellent!", \
+        SerieReview.objects.create(rating=5, comment="Excellent!",
                                    serie=top, user=user2)
-        MovieReview.objects.create(rating=1, comment="Really bad!",\
+        MovieReview.objects.create(rating=1, comment="Really bad!",
                                    movie=trendy, user=user3)
-        SerieReview.objects.create(rating=1, comment="Really bad!", \
+        SerieReview.objects.create(rating=1, comment="Really bad!",
                                    serie=top, user=user3)
         Movie.objects.create(title="Unknown	Movie", popularity=41)
         Serie.objects.create(title="Unknown	Serie", popularity=33)

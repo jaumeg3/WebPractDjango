@@ -10,6 +10,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Platform(models.Model):
     '''Atributes of Platform '''
     name = models.TextField()
+    image = models.ImageField(upload_to="FilmRevolutionApp",
+                              blank=True, null=True)
     url = models.URLField()
     date = models.DateField(default=date.today)
 
@@ -24,6 +26,8 @@ class Platform(models.Model):
 class Production(models.Model):
     '''Atributes of Production '''
     name = models.TextField()
+    image = models.ImageField(upload_to="FilmRevolutionApp",
+                              blank=True, null=True)
     url = models.URLField()
     date = models.DateField(default=date.today)
 
@@ -44,6 +48,8 @@ class Movie(models.Model):
     popularity = models.IntegerField(validators=[MaxValueValidator(100),
                                                  MinValueValidator(1)])
     country = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to="FilmRevolutionApp",
+                              blank=True, null=True)
     date = models.DateField(default=date.today)
     user = models.ForeignKey(User, default=1)
     productor = models.ForeignKey(Production, null=True)
@@ -65,6 +71,8 @@ class Serie(models.Model):
                                                  MinValueValidator(1)])
     numberSeasons = models.IntegerField(validators=[MinValueValidator(1)])
     numberChapters = models.IntegerField(validators=[MinValueValidator(1)])
+    image = models.ImageField(upload_to="FilmRevolutionApp",
+                              blank=True, null=True)
     date = models.DateField(default=date.today)
     user = models.ForeignKey(User, default=1)
     platform = models.ForeignKey(Platform, null=True)
@@ -80,6 +88,8 @@ class Serie(models.Model):
 class Actor(models.Model):
     '''Atributes of Actor '''
     name = models.TextField()
+    image = models.ImageField(upload_to="FilmRevolutionApp",
+                              blank=True, null=True)
     age = models.IntegerField(validators=[MaxValueValidator(120),
                                           MinValueValidator(1)])
     birthday = models.DateField()
@@ -110,6 +120,8 @@ class Actor(models.Model):
 class Director(models.Model):
     '''Atributes of Director '''
     name = models.TextField()
+    image = models.ImageField(upload_to="FilmRevolutionApp",
+                              blank=True, null=True)
     age = models.IntegerField(validators=[MaxValueValidator(120),
                                           MinValueValidator(1)])
     birthday = models.DateField()

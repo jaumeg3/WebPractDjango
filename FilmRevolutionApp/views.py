@@ -11,9 +11,10 @@ from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.reverse import reverse
 from rest_framework.response import Response
-from serializers import MovieSerializer,SerieSerializer
-
+from serializers import MovieSerializer, SerieSerializer, \
+    SerieReviewSerializer, MovieReviewSerializer
 # Create your views here.
+
 
 def mainpage(request):
     '''This function return the view of the mainpage of the application'''
@@ -157,7 +158,7 @@ def api_root(request, format=None):
 
 class MovieListAPI(generics.ListCreateAPIView):
     """
-    API	endpoint that represents a list	of	author.
+    API	endpoint that represents a list	of	Movies.
     """
     model = Movie
     queryset = Movie.objects.all()
@@ -166,16 +167,34 @@ class MovieListAPI(generics.ListCreateAPIView):
 
 class MovieDetailAPI(generics.RetrieveUpdateDestroyAPIView):
     """
-    API	endpoint that represents a single author.
+    API	endpoint that represents a single Movie.
     """
     model = Movie
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
 
+class MovieReviewListAPI(generics.ListCreateAPIView):
+    """
+    API	endpoint that represents a list of MovieReviews.
+    """
+    model = MovieReview
+    queryset = MovieReview.objects.all()
+    serializer_class = MovieReviewSerializer
+
+
+class MovieReviewDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    API	endpoint	that	represents	a	single	MovieReview.
+    """
+    model = MovieReview
+    queryset = MovieReview.objects.all()
+    serializer_class = MovieReviewSerializer
+
+
 class SerieListAPI(generics.ListCreateAPIView):
     """
-    API	endpoint that represents a list of books.
+    API	endpoint that represents a list of series.
     """
     model = Serie
     queryset = Serie.objects.all()
@@ -184,8 +203,26 @@ class SerieListAPI(generics.ListCreateAPIView):
 
 class SerieDetailAPI(generics.RetrieveUpdateDestroyAPIView):
     """
-    API	endpoint	that	represents	a	single	books.
+    API	endpoint	that	represents	a	single	serie.
     """
     model = Serie
     queryset = Serie.objects.all()
     serializer_class = SerieSerializer
+
+
+class SerieReviewListAPI(generics.ListCreateAPIView):
+    """
+    API	endpoint that represents a list of SerieReviews.
+    """
+    model = SerieReview
+    queryset = SerieReview.objects.all()
+    serializer_class = SerieReviewSerializer
+
+
+class SerieReviewDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    API	endpoint	that	represents	a	single	SerieReview.
+    """
+    model = SerieReview
+    queryset = SerieReview.objects.all()
+    serializer_class = SerieReviewSerializer

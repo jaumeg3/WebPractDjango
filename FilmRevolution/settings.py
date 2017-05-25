@@ -106,3 +106,6 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':
                     ('rest_framework.permissions.IsAdminUser',),
                   'PAGINATE_BY':10}
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

@@ -6,6 +6,9 @@
                     (<a  href="{%  url  'FilmRevolutionApp:production_edit'  production.id %}">edit</a>)
                 {%  endif  %}
         </h1>
+        {% if production.image %}
+            <p><img src="{{ production.image.url }}"/></p>
+        {% endif %}
         <h2>
             Url:
         </h2>

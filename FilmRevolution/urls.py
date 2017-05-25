@@ -12,10 +12,11 @@ Class-based views
 Including another URLconf
     1. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
 from django.views.generic import RedirectView
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -26,3 +27,10 @@ urlpatterns = [
     url(r'^$', RedirectView.as_view(url='FilmRevolutionApp', permanent=False),
         name='index'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+                            url(r'^(?P<path>.\*)\$',
+                                'django.views.static.serve',
+                                {'document_root': settings.MEDIA_ROOT, }),
+)

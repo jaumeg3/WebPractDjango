@@ -6,7 +6,8 @@ from forms import MovieForm, SerieForm, ActorForm, DirectorForm
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
     DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, reviewM, \
     reviewS, mainpage, deleteM, deleteS, MovieDetailAPI, MovieListAPI, \
-    SerieDetailAPI, SerieListAPI
+    SerieDetailAPI, SerieListAPI, SerieReviewListAPI, SerieReviewDetailAPI, \
+    MovieReviewDetailAPI, MovieReviewListAPI
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
@@ -133,12 +134,24 @@ urlpatterns = [
     url(r'^api/movies/(?P<pk>\d+)/$',
         MovieDetailAPI.as_view(),
         name='movie-detail'),
+    url(r'^api/movies/(?P<pk>\d+)/reviews$',
+        MovieReviewListAPI.as_view(),
+        name='movieReview-list'),
+    url(r'^api/movies/reviews/(?P<pk>\d+)/$',
+        MovieReviewDetailAPI.as_view(),
+        name='movieReview-detail'),
     url(r'^api/series$',
         SerieListAPI.as_view(),
         name='serie-list'),
     url(r'^api/series/(?P<pk>\d+)/$',
         SerieDetailAPI.as_view(),
         name='serie-detail'),
+    url(r'^api/series/(?P<pk>\d+)/reviews$',
+        SerieReviewListAPI.as_view(),
+        name='serieReview-list'),
+    url(r'^api/series/reviews/(?P<pk>\d+)/$',
+        SerieReviewDetailAPI.as_view(),
+        name='serieReview-detail'),
     url(r'^api-auth/',
         include('rest_framework.urls',
                 namespace='rest_framework')),

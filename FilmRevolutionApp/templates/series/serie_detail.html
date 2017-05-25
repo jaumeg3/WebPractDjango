@@ -7,6 +7,9 @@
                     (<a  href="{%  url  'FilmRevolutionApp:series_delete'  serie.id  %}">delete</a>)
                 {%  endif  %}
         </h1>
+        {% if serie.image %}
+            <p><img src="{{ serie.image.url }}"/></p>
+        {% endif %}
         <h2>
             Genere:
         </h2>
