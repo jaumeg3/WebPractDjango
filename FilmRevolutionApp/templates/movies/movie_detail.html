@@ -7,6 +7,9 @@
                     (<a href="{% url 'FilmRevolutionApp:movies_delete' movie.id %}">delete</a>)
                 {%  endif  %}
         </h1>
+        {% if movie.image %}
+            <p><img src="{{ movie.image.url }}"/></p>
+        {% endif %}
         <h2>
             Country:
         </h2>
