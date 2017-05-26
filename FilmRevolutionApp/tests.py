@@ -55,3 +55,4 @@ class MovieReviewTestCase(TestCase):
         """The average review for a restaurant without reviews is 0"""
         movie = Movie.objects.get(title="Unknown Movie")
         self.assertEqual(movie.averageRating(), 0)
+
