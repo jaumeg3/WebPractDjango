@@ -93,6 +93,15 @@ body {
     background: linear-gradient(to right, #243949, #517fa4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	font-family: 'Open Sans', sans-serif;
     transition: background-color .5s;
+    color: white;
+}
+
+a {
+    color: yellow;
+}
+
+a:hover{
+    color: red;
 }
 
 /* Menu */
