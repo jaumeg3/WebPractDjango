@@ -10,20 +10,6 @@ class MovieSerializer (serializers.HyperlinkedModelSerializer):
         fields = ('title', 'budget', 'genere', 'url', 'popularity', 'country')
 
 
-class MovieReviewSerializer (serializers.HyperlinkedModelSerializer):
-    ''' For the API '''
-    class Meta:
-        model = MovieReview
-        fields = ('uri', 'rating', 'comment', 'user', 'date', 'movie')
-
-
-class SerieReviewSerializer (serializers.HyperlinkedModelSerializer):
-    ''' For the API '''
-    class Meta:
-        model = SerieReview
-        fields = ('uri', 'rating', 'comment', 'user', 'date', 'serie')
-
-
 class SerieSerializer (serializers.HyperlinkedModelSerializer):
     ''' For the API '''
     class Meta:
@@ -37,7 +23,7 @@ class ActorSerializer (serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Actor
         fields = ('name', 'age', 'birthday', 'deathday', 'gender',
-                  'place')
+                  'city')
 
 
 class DirectorSerializer (serializers.HyperlinkedModelSerializer):
@@ -45,7 +31,7 @@ class DirectorSerializer (serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Director
         fields = ('name', 'age', 'birthday', 'deathday', 'gender',
-                  'place')
+                  'city')
 
 
 class PlatformSerializer (serializers.HyperlinkedModelSerializer):

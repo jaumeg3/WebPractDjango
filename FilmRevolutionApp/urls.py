@@ -6,8 +6,9 @@ from forms import MovieForm, SerieForm, ActorForm, DirectorForm
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
     DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, reviewM, \
     reviewS, mainpage, deleteM, deleteS, MovieDetailAPI, MovieListAPI, \
-    SerieDetailAPI, SerieListAPI, SerieReviewListAPI, SerieReviewDetailAPI, \
-    MovieReviewDetailAPI, MovieReviewListAPI
+    SerieDetailAPI, SerieListAPI, ActorListAPI, ActorDetailAPI, \
+    DirectorListAPI, DirectorDetailAPI, ProductionListAPI,\
+    ProductionDetailAPI, PlatformListAPI, PlatformDetailAPI
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
@@ -134,24 +135,36 @@ urlpatterns = [
     url(r'^api/movies/(?P<pk>\d+)/$',
         MovieDetailAPI.as_view(),
         name='movie-detail'),
-    url(r'^api/movies/(?P<pk>\d+)/reviews$',
-        MovieReviewListAPI.as_view(),
-        name='movieReview-list'),
-    url(r'^api/movies/reviews/(?P<pk>\d+)/$',
-        MovieReviewDetailAPI.as_view(),
-        name='movieReview-detail'),
     url(r'^api/series$',
         SerieListAPI.as_view(),
         name='serie-list'),
     url(r'^api/series/(?P<pk>\d+)/$',
         SerieDetailAPI.as_view(),
         name='serie-detail'),
-    url(r'^api/series/(?P<pk>\d+)/reviews$',
-        SerieReviewListAPI.as_view(),
-        name='serieReview-list'),
-    url(r'^api/series/reviews/(?P<pk>\d+)/$',
-        SerieReviewDetailAPI.as_view(),
-        name='serieReview-detail'),
+    url(r'^api/actor$',
+        ActorListAPI.as_view(),
+        name='actor-list'),
+    url(r'^api/actors/(?P<pk>\d+)/$',
+        ActorDetailAPI.as_view(),
+        name='actor-detail'),
+    url(r'^api/directors$',
+        DirectorListAPI.as_view(),
+        name='director-list'),
+    url(r'^api/directors/(?P<pk>\d+)/$',
+        DirectorDetailAPI.as_view(),
+        name='director-detail'),
+    url(r'^api/productions$',
+        ProductionListAPI.as_view(),
+        name='production-list'),
+    url(r'^api/productions/(?P<pk>\d+)/$',
+        ProductionDetailAPI.as_view(),
+        name='production-detail'),
+    url(r'^api/platforms$',
+        PlatformListAPI.as_view(),
+        name='platform-list'),
+    url(r'^api/platforms/(?P<pk>\d+)/$',
+        PlatformDetailAPI.as_view(),
+        name='platform-detail'),
     url(r'^api-auth/',
         include('rest_framework.urls',
                 namespace='rest_framework')),

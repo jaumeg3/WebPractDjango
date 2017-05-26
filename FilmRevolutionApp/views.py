@@ -12,7 +12,8 @@ from rest_framework.decorators import api_view
 from rest_framework.reverse import reverse
 from rest_framework.response import Response
 from serializers import MovieSerializer, SerieSerializer, \
-    SerieReviewSerializer, MovieReviewSerializer
+    ActorSerializer, DirectorSerializer, ProductionSerializer, \
+    PlatformSerializer
 # Create your views here.
 
 
@@ -174,24 +175,6 @@ class MovieDetailAPI(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = MovieSerializer
 
 
-class MovieReviewListAPI(generics.ListCreateAPIView):
-    """
-    API	endpoint that represents a list of MovieReviews.
-    """
-    model = MovieReview
-    queryset = MovieReview.objects.all()
-    serializer_class = MovieReviewSerializer
-
-
-class MovieReviewDetailAPI(generics.RetrieveUpdateDestroyAPIView):
-    """
-    API	endpoint	that	represents	a	single	MovieReview.
-    """
-    model = MovieReview
-    queryset = MovieReview.objects.all()
-    serializer_class = MovieReviewSerializer
-
-
 class SerieListAPI(generics.ListCreateAPIView):
     """
     API	endpoint that represents a list of series.
@@ -210,19 +193,73 @@ class SerieDetailAPI(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = SerieSerializer
 
 
-class SerieReviewListAPI(generics.ListCreateAPIView):
+class ActorListAPI(generics.ListCreateAPIView):
     """
-    API	endpoint that represents a list of SerieReviews.
+    API	endpoint that represents a list	of	Actor.
     """
-    model = SerieReview
-    queryset = SerieReview.objects.all()
-    serializer_class = SerieReviewSerializer
+    model = Actor
+    queryset = Actor.objects.all()
+    serializer_class = ActorSerializer
 
 
-class SerieReviewDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+class ActorDetailAPI(generics.RetrieveUpdateDestroyAPIView):
     """
-    API	endpoint	that	represents	a	single	SerieReview.
+    API	endpoint that represents a single Actor.
     """
-    model = SerieReview
-    queryset = SerieReview.objects.all()
-    serializer_class = SerieReviewSerializer
+    model = Actor
+    queryset = Actor.objects.all()
+    serializer_class = ActorSerializer
+
+
+class DirectorListAPI(generics.ListCreateAPIView):
+    """
+    API	endpoint that represents a list	of	Director.
+    """
+    model = Director
+    queryset = Director.objects.all()
+    serializer_class = DirectorSerializer
+
+
+class DirectorDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    API	endpoint that represents a single Director.
+    """
+    model = Director
+    queryset = Director.objects.all()
+    serializer_class = DirectorSerializer
+
+
+class ProductionListAPI(generics.ListCreateAPIView):
+    """
+    API	endpoint that represents a list	of	Production.
+    """
+    model = Production
+    queryset = Production.objects.all()
+    serializer_class = ProductionSerializer
+
+
+class ProductionDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    API	endpoint that represents a single Production.
+    """
+    model = Production
+    queryset = Movie.objects.all()
+    serializer_class = ProductionSerializer
+
+
+class PlatformListAPI(generics.ListCreateAPIView):
+    """
+    API	endpoint that represents a list	of	Platform.
+    """
+    model = Platform
+    queryset = Platform.objects.all()
+    serializer_class = PlatformSerializer
+
+
+class PlatformDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    API	endpoint that represents a single Platform.
+    """
+    model = Platform
+    queryset = Platform.objects.all()
+    serializer_class = PlatformSerializer
