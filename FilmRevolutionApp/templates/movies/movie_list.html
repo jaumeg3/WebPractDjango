@@ -6,9 +6,6 @@
                 (<a  href="{%  url  'FilmRevolutionApp:movie_create'  %}">add</a>)
             {%  endif  %}
         </h1>
-        <form  action="{%  url  'FilmRevolutionApp:review_movie_create'  movie.id  %}"  method="post">
-            <input type="text" name="searcher">
-        </form>
         <ul>
             {%  for  movie  in  latest_movie_list  %}
                 <li>
