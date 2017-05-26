@@ -61,6 +61,14 @@ class Movie(models.Model):
         return reverse('FilmRevolutionApp:movie_detail',
                        kwargs={'pk': self.pk})
 
+    def averageRating(self):
+        reviewCount = self.moviereview_set.count()
+        if not reviewCount:
+            return 0
+        else:
+            ratingSum = sum([float(review.rating) for review in self.moviereview_set.all()])
+            return ratingSum / reviewCount
+
 
 class Serie(models.Model):
     '''Atributes of Serie '''
