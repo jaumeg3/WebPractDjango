@@ -26,7 +26,7 @@
     <div id="main">
     <div  id="header">
     {%  block  header  %}
-    {%  if  user.username  %}
+    {%  if  user.is_authenticated  %}
         <p>User:  {{  user.username  }}  |  <a  href="{%  url  'logout'  %}?next={{request.path}}">logout</a>
         </p>
     {%  else  %}
