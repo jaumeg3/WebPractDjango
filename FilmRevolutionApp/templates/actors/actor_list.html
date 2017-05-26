@@ -7,7 +7,7 @@
             <ul id="grid">
             {%  for  actor  in  latest_actor_list  %}
                 <li id="grid">
-                    <a  href="{%  url  'FilmRevolutionApp:actor_detail'  actor.id  %}"> {{  actor.name  }}
+                    <a  href="{%  url  'FilmRevolutionApp:actor_detail'  actor.id  %}" id="Links"> {{  actor.name  }}
                     </a>
                 </li>
             {%  empty  %}
