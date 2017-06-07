@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e3081ef-436c-4fae-8f42-21d8d45195da" name="Default" comment="Add API RESTful features">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/FilmRevolutionApp/home.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FilmRevolutionApp/templates/main.html" afterPath="$PROJECT_DIR$/FilmRevolutionApp/templates/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FilmRevolutionApp/models.py" afterPath="$PROJECT_DIR$/FilmRevolutionApp/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FilmRevolutionApp/templates/actors/actor_detail.html" afterPath="$PROJECT_DIR$/FilmRevolutionApp/templates/actors/actor_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FilmRevolutionApp/templates/directors/director_detail.html" afterPath="$PROJECT_DIR$/FilmRevolutionApp/templates/directors/director_detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FilmRevolutionApp/templates/movies/movie_detail.html" afterPath="$PROJECT_DIR$/FilmRevolutionApp/templates/movies/movie_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FilmRevolutionApp/templates/series/serie_detail.html" afterPath="$PROJECT_DIR$/FilmRevolutionApp/templates/series/serie_detail.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -106,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie_detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="movie_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/templates/movies/movie_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="808">
-              <caret line="91" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="91" selection-end-column="16" />
+            <state relative-caret-position="-628">
+              <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -119,8 +121,30 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2574">
-              <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state relative-caret-position="-1948">
+              <caret line="85" column="53" lean-forward="false" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actor_detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/templates/actors/actor_detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="director_detail.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/templates/directors/director_detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -191,7 +215,6 @@
         <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/directors/form.html" />
         <option value="$PROJECT_DIR$/FilmRevolutionApp/admin.py" />
         <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/actors/form.html" />
-        <option value="$PROJECT_DIR$/FilmRevolutionApp/models.py" />
         <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/directors/director_list.html" />
         <option value="$PROJECT_DIR$/FilmRevolutionApp/forms.py" />
         <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/platform/platform_list.html" />
@@ -213,13 +236,14 @@
         <option value="$PROJECT_DIR$/features/steps/register_productor.py" />
         <option value="$PROJECT_DIR$/features/enviroment.py" />
         <option value="$PROJECT_DIR$/features/environment.py" />
-        <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/directors/director_detail.html" />
-        <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/actors/actor_detail.html" />
         <option value="$PROJECT_DIR$/features/list_restaurants.feature" />
         <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/movies/movie_list.html" />
         <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/main.html" />
         <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/series/serie_detail.html" />
         <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/movies/movie_detail.html" />
+        <option value="$PROJECT_DIR$/FilmRevolutionApp/models.py" />
+        <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/actors/actor_detail.html" />
+        <option value="$PROJECT_DIR$/FilmRevolutionApp/templates/directors/director_detail.html" />
       </list>
     </option>
   </component>
@@ -353,6 +377,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="movies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebPractDjango" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebPractDjango" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FilmRevolutionApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebPractDjango" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebPractDjango" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FilmRevolutionApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -752,6 +820,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14605543" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -759,7 +828,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08315565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.121606946" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23235613" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23235613" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32356134" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1033,24 +1102,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/templates/directors/director_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="52" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/templates/actors/actor_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="9" column="89" lean-forward="false" selection-start-line="9" selection-start-column="89" selection-end-line="9" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/templates/actors/actor_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1107,18 +1162,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/models.py">
+    <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/templates/movies/movie_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2574">
-          <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state relative-caret-position="-628">
+          <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/templates/movies/movie_detail.html">
+    <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="808">
-          <caret line="91" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="91" selection-end-column="16" />
+        <state relative-caret-position="-1948">
+          <caret line="85" column="53" lean-forward="false" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/templates/actors/actor_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FilmRevolutionApp/templates/directors/director_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
           <folding />
         </state>
       </provider>
