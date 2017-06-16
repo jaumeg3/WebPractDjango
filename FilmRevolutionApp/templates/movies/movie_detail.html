@@ -83,7 +83,7 @@
             <li>
                 <p>{{ review.rating }} star{{ review.rating|pluralize }}</p>
                 <p>{{ review.comment }}</p>
-                <p>Created by {{ review.user }} on {{ review.date }}</p>
+                <p>Created by {{ review.user }} on  {{ review.date }} </p>
             </li>
         {% endfor %}
     </ul>
@@ -110,7 +110,6 @@
     </span>
 {% endblock %}
 {% block  footer %}
-    Created  by  {{ movie.user }}  on
-    <span property="dateCreated"> {{ movie.date }}</span>
+    Created  by  {{ movie.user }}  on {{ movie.date }}
 {% endblock %}
 </span>
