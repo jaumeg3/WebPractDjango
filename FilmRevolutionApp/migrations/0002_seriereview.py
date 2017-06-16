@@ -26,7 +26,8 @@ class Migration(migrations.Migration):
                                                                 (2, b'two'),
                                                                 (3, b'three'),
                                                                 (4, b'four'), (
-                                                                5, b'five')])),
+                                                                    5,
+                                                                    b'five')])),
                 ('comment', models.TextField(null=True, blank=True)),
                 ('date', models.DateField(default=datetime.date.today)),
                 ('movie', models.ForeignKey(to='FilmRevolutionApp.Serie')),

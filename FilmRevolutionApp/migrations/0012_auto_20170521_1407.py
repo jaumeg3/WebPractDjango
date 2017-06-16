@@ -14,12 +14,12 @@ class Migration(migrations.Migration):
             model_name='actor',
             name='gender',
             field=models.CharField(max_length=6, choices=[(b'Male', b'Male'), (
-            b'Female', b'Female')]),
+                b'Female', b'Female')]),
         ),
         migrations.AlterField(
             model_name='director',
             name='gender',
             field=models.CharField(max_length=6, choices=[(b'Male', b'Male'), (
-            b'Female', b'Female')]),
+                b'Female', b'Female')]),
         ),
     ]
