@@ -1,7 +1,8 @@
 {% extends  "base.html" %}
 {% block  content %}
+    <span vocab="http://schema.org/" typeof="actor">
     <h1>
-        {{ actor.name }}
+         <span property="name">{{ actor.name }}</span>
         {% if  user  ==  actor.user %}
             (
             <a href="{% url  'FilmRevolutionApp:actor_edit'  actor.id %}">edit</a>
@@ -9,7 +10,8 @@
         {% endif %}
     </h1>
     {% if director.image %}
-        <p><img src="{{ director.image.url }}"/></p>
+        <span property="image"><p><img src="{{ actor.image.url }}"
+                                       width="100%"/></p></span>
     {% endif %}
     <h2>
         Age:
@@ -21,25 +23,25 @@
         Birthday:
     </h2>
     <p>
-        {{ actor.birthday }}
+        <span property="birthDate">{{ actor.birthday }}</span>
     </p>
     <h2>
         Death day:
     </h2>
     <p>
-        {{ actor.deathday }}
+        <span property="deathDate">{{ actor.deathday }}</span>
     </p>
     <h2>
         Gender:
     </h2>
     <p>
-        {{ actor.gender }}
+        <span property="gender">{{ actor.gender }}</span>
     </p>
     <h2>
         City:
     </h2>
     <p>
-        {{ actor.city }}
+        <span property="address">{{ actor.city }}</span>
     </p>
     <h2>
         State:
@@ -51,9 +53,10 @@
         Country:
     </h2>
     <p>
-        {{ actor.country }}
+        <span property="nationallity">{{ actor.country }}</span>
     </p>
 {% endblock %}
 {% block  footer %}
     Created  by  {{ actor.user }}  on  {{ actor.date }}
 {% endblock %}
+</span>
