@@ -4,6 +4,7 @@
 {% endblock %}
 {% block  content %}
     <span vocab="http://schema.org/" typeof="Movie">
+    <span property="dateCreated">{{ movie.date }}</span>
     <h1>
             <span property="name">{{ movie.title }} </span>
         {% if  user  ==  movie.user %}
