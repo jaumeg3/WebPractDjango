@@ -1,7 +1,8 @@
 {% extends  "base.html" %}
 {% block  content %}
+    <span vocab="http://schema.org/" typeof="TVSeries">
     <h1>
-        {{ production.name }}
+            <span property="name">{{ production.name }}</span>
         {% if  user  ==  production.user %}
             (
             <a href="{% url  'FilmRevolutionApp:production_edit'  production.id %}">edit</a>
@@ -9,14 +10,16 @@
         {% endif %}
     </h1>
     {% if production.image %}
-        <p><img src="{{ production.image.url }}"/></p>
+        <span property="image"><p><img src="{{ production.image.url }}"
+                                       width="100%"/></p></span>
     {% endif %}
     <h2>
         Url:
     </h2>
     <p>
-        {{ production.url }}
+        <span property="url">{{ production.url }}</span>
     </p>
+    </span>
 {% endblock %}
 {% block  footer %}
     Created  by  {{ production.user }}  on  {{ production.date }}
