@@ -69,17 +69,16 @@
             </p>
     <h2>Reviews</h2>
     <span rel="aggregateRating">
-            <p typeof="AggregateRating">
+    <p typeof="AggregateRating">
             Average rating
                 <span property="ratingValue">
                     {{ movie.averageRating|stringformat:".1f" }}
                 </span>
-                {% with movie.moviereview_set.all|length as reviewCount %}
-                    from <span property="reviewCount">{{ reviewCount }}</span>
-                    review{{ reviewCount|pluralize }}
-                {% endwith %}
+        {% with movie.moviereview_set.all|length as reviewCount %}
+            from <span property="reviewCount">{{ reviewCount }}</span>
+            review{{ reviewCount|pluralize }}
+        {% endwith %}
             </p>
-        </span>
     <ul>
         {% for  review  in  movie.moviereview_set.all %}
             <li>
