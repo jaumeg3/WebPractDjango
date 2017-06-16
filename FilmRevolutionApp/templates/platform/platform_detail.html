@@ -1,21 +1,23 @@
-{%  extends  "base.html" %}
-    {%  block  content  %}
-        <h1>
-            {{  platform.name  }}
-                {%  if  user  ==  platform.user  %}
-                    (<a  href="{%  url  'FilmRevolutionApp:platform_edit'  platform.id %}">edit</a>)
-                {%  endif  %}
-        </h1>
-        {% if platform.image %}
-            <p><img src="{{ platform.image.url }}"/></p>
+{% extends  "base.html" %}
+{% block  content %}
+    <h1>
+        {{ platform.name }}
+        {% if  user  ==  platform.user %}
+            (
+            <a href="{% url  'FilmRevolutionApp:platform_edit'  platform.id %}">edit</a>
+            )
         {% endif %}
-        <h2>
-            Url:
-        </h2>
-            <p>
-                {{  platform.url  }}
-            </p>
-    {%  endblock  %}
-{%  block  footer  %}
-    Created  by  {{  platform.user  }}  on  {{  platform.date  }}
-{%  endblock  %}
+    </h1>
+    {% if platform.image %}
+        <p><img src="{{ platform.image.url }}"/></p>
+    {% endif %}
+    <h2>
+        Url:
+    </h2>
+    <p>
+        {{ platform.url }}
+    </p>
+{% endblock %}
+{% block  footer %}
+    Created  by  {{ platform.user }}  on  {{ platform.date }}
+{% endblock %}

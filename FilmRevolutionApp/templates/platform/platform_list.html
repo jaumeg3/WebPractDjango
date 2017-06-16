@@ -1,16 +1,16 @@
-{%  extends  "base.html"  %}
-    {%  block  content  %}
-        <h1>
-            Platforms
-        </h1>
-        <ul>
-            {%  for  platform  in  latest_platform_list  %}
-                <li>
-                    <a  href="{%  url  'FilmRevolutionApp:platform_detail'  platform.id  %}"> {{  platform.name }}
-                    </a>
-                </li>
-            {%  empty  %}
-                <li>Sorry,  no  movies  registered  yet.</li>
-            {%  endfor  %}
-        </ul>
-    {%  endblock  %}
+{% extends  "base.html" %}
+{% block  content %}
+    <h1>
+        Platforms
+    </h1>
+    <ul>
+        {% for  platform  in  latest_platform_list %}
+            <li>
+                <a href="{% url  'FilmRevolutionApp:platform_detail'  platform.id %}"> {{ platform.name }}
+                </a>
+            </li>
+        {% empty %}
+            <li>Sorry, no movies registered yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

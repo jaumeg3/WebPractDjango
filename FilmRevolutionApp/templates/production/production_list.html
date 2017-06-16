@@ -1,16 +1,16 @@
-{%  extends  "base.html"  %}
-    {%  block  content  %}
-        <h1>
-            Productions
-        </h1>
-        <ul>
-            {%  for  production  in  latest_production_list  %}
-                <li>
-                    <a  href="{%  url  'FilmRevolutionApp:production_detail'  production.id  %}"> {{  production.name  }}
-                    </a>
-                </li>
-            {%  empty  %}
-                <li>Sorry,  no  movies  registered  yet.</li>
-            {%  endfor  %}
-        </ul>
-    {%  endblock  %}
+{% extends  "base.html" %}
+{% block  content %}
+    <h1>
+        Productions
+    </h1>
+    <ul>
+        {% for  production  in  latest_production_list %}
+            <li>
+                <a href="{% url  'FilmRevolutionApp:production_detail'  production.id %}"> {{ production.name }}
+                </a>
+            </li>
+        {% empty %}
+            <li>Sorry, no movies registered yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

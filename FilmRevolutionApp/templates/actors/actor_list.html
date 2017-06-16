@@ -1,18 +1,19 @@
-{%  extends  "base.html"  %}
-    {%  block  content  %}
-        <h1>
-            Actors
-        </h1>
-        <div id="grid">
-            <ul id="grid">
-            {%  for  actor  in  latest_actor_list  %}
+{% extends  "base.html" %}
+{% block  content %}
+    <h1>
+        Actors
+    </h1>
+    <div id="grid">
+        <ul id="grid">
+            {% for  actor  in  latest_actor_list %}
                 <li id="grid">
-                    <a  href="{%  url  'FilmRevolutionApp:actor_detail'  actor.id  %}" id="Links"> {{  actor.name  }}
+                    <a href="{% url  'FilmRevolutionApp:actor_detail'  actor.id %}"
+                       id="Links"> {{ actor.name }}
                     </a>
                 </li>
-            {%  empty  %}
-                <li>Sorry,  no  movies  registered  yet.</li>
-            {%  endfor  %}
+            {% empty %}
+                <li>Sorry, no movies registered yet.</li>
+            {% endfor %}
         </ul>
-        </div>
-    {%  endblock  %}
+    </div>
+{% endblock %}

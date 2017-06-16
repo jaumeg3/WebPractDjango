@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('FilmRevolutionApp', '0012_auto_20170521_1407'),
     ]
@@ -15,31 +14,37 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='actor',
             name='image',
-            field=models.ImageField(blank=True, null=True, upload_to=b'FilmRevolutionApp'),
+            field=models.ImageField(blank=True, null=True,
+                                    upload_to=b'FilmRevolutionApp'),
         ),
         migrations.AddField(
             model_name='director',
             name='image',
-            field=models.ImageField(blank=True, null=True, upload_to=b'FilmRevolutionApp'),
+            field=models.ImageField(blank=True, null=True,
+                                    upload_to=b'FilmRevolutionApp'),
         ),
         migrations.AddField(
             model_name='movie',
             name='image',
-            field=models.ImageField(blank=True, null=True, upload_to=b'FilmRevolutionApp'),
+            field=models.ImageField(blank=True, null=True,
+                                    upload_to=b'FilmRevolutionApp'),
         ),
         migrations.AddField(
             model_name='platform',
             name='image',
-            field=models.ImageField(blank=True, null=True, upload_to=b'FilmRevolutionApp'),
+            field=models.ImageField(blank=True, null=True,
+                                    upload_to=b'FilmRevolutionApp'),
         ),
         migrations.AddField(
             model_name='production',
             name='image',
-            field=models.ImageField(blank=True, null=True, upload_to=b'FilmRevolutionApp'),
+            field=models.ImageField(blank=True, null=True,
+                                    upload_to=b'FilmRevolutionApp'),
         ),
         migrations.AddField(
             model_name='serie',
             name='image',
-            field=models.ImageField(blank=True, null=True, upload_to=b'FilmRevolutionApp'),
+            field=models.ImageField(blank=True, null=True,
+                                    upload_to=b'FilmRevolutionApp'),
         ),
     ]

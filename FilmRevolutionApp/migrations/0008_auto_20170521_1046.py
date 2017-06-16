@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('FilmRevolutionApp', '0007_auto_20170521_1041'),
     ]
@@ -14,7 +13,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='actor',
             name='gender',
-            field=models.CharField(max_length=1, choices=[(b'M', b'Male'), (b'F', b'Female')]),
+            field=models.CharField(max_length=1, choices=[(b'M', b'Male'),
+                                                          (b'F', b'Female')]),
         ),
         migrations.AlterField(
             model_name='director',
@@ -24,6 +24,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='director',
             name='gender',
-            field=models.CharField(max_length=1, choices=[(b'M', b'Male'), (b'F', b'Female')]),
+            field=models.CharField(max_length=1, choices=[(b'M', b'Male'),
+                                                          (b'F', b'Female')]),
         ),
     ]

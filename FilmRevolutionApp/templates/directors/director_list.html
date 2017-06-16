@@ -1,16 +1,16 @@
-{%  extends  "base.html"  %}
-    {%  block  content  %}
-        <h1>
-            Directors
-        </h1>
-        <ul>
-            {%  for  director  in  latest_director_list  %}
-                <li>
-                    <a  href="{%  url  'FilmRevolutionApp:director_detail'  director.id  %}"> {{  director.name  }}
-                    </a>
-                </li>
-            {%  empty  %}
-                <li>Sorry,  no  movies  registered  yet.</li>
-            {%  endfor  %}
-        </ul>
-    {%  endblock  %}
+{% extends  "base.html" %}
+{% block  content %}
+    <h1>
+        Directors
+    </h1>
+    <ul>
+        {% for  director  in  latest_director_list %}
+            <li>
+                <a href="{% url  'FilmRevolutionApp:director_detail'  director.id %}"> {{ director.name }}
+                </a>
+            </li>
+        {% empty %}
+            <li>Sorry, no movies registered yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

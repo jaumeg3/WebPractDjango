@@ -1,57 +1,59 @@
-{%  extends  "base.html" %}
-    {%  block  content  %}
-        <h1>
-            {{  director.name  }}
-                {%  if  user  ==  director.user  %}
-                    (<a  href="{%  url  'FilmRevolutionApp:director_edit'  director.id %}">edit</a>)
-                {%  endif  %}
-        </h1>
-        {% if director.image %}
-            <p><img src="{{ director.image.url }}"/></p>
+{% extends  "base.html" %}
+{% block  content %}
+    <h1>
+        {{ director.name }}
+        {% if  user  ==  director.user %}
+            (
+            <a href="{% url  'FilmRevolutionApp:director_edit'  director.id %}">edit</a>
+            )
         {% endif %}
-        <h2>
-            Age:
-        </h2>
-            <p>
-                {{  director.age  }}
-            </p>
-        <h2>
-            Birthday:
-        </h2>
-            <p>
-                {{  director.birthday  }}
-            </p>
-        <h2>
-            Death day:
-        </h2>
-            <p>
-                {{  director.deathday  }}
-            </p>
-        <h2>
-            Gender:
-        </h2>
-            <p>
-                {{  director.gender  }}
-            </p>
-        <h2>
-            City:
-        </h2>
-            <p>
-                {{  director.city  }}
-            </p>
-        <h2>
-            State:
-        </h2>
-            <p>
-                {{  director.state  }}
-            </p>
-        <h2>
-            Country:
-        </h2>
-            <p>
-                {{  director.country  }}
-            </p>
-    {%  endblock  %}
-{%  block  footer  %}
-    Created  by  {{  director.user  }}  on  {{  director.date  }}
-{%  endblock  %}
+    </h1>
+    {% if director.image %}
+        <p><img src="{{ director.image.url }}"/></p>
+    {% endif %}
+    <h2>
+        Age:
+    </h2>
+    <p>
+        {{ director.age }}
+    </p>
+    <h2>
+        Birthday:
+    </h2>
+    <p>
+        {{ director.birthday }}
+    </p>
+    <h2>
+        Death day:
+    </h2>
+    <p>
+        {{ director.deathday }}
+    </p>
+    <h2>
+        Gender:
+    </h2>
+    <p>
+        {{ director.gender }}
+    </p>
+    <h2>
+        City:
+    </h2>
+    <p>
+        {{ director.city }}
+    </p>
+    <h2>
+        State:
+    </h2>
+    <p>
+        {{ director.state }}
+    </p>
+    <h2>
+        Country:
+    </h2>
+    <p>
+        {{ director.country }}
+    </p>
+{% endblock %}
+{% block  footer %}
+    Created  by  {{ director.user }}  on  {{ director.date }}
+{% endblock %}

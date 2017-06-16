@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import migrations, models
 import datetime
+
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('FilmRevolutionApp', '0006_auto_20170521_1014'),
     ]

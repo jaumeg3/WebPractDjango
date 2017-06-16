@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import migrations, models
 import django.core.validators
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('FilmRevolutionApp', '0004_auto_20170419_1512'),
     ]
@@ -58,12 +57,14 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='actor',
             name='movie',
-            field=models.ForeignKey(related_name='ActorM', blank=True, to='FilmRevolutionApp.Movie', null=True),
+            field=models.ForeignKey(related_name='ActorM', blank=True,
+                                    to='FilmRevolutionApp.Movie', null=True),
         ),
         migrations.AlterField(
             model_name='actor',
             name='serie',
-            field=models.ForeignKey(related_name='ActorS', blank=True, to='FilmRevolutionApp.Serie', null=True),
+            field=models.ForeignKey(related_name='ActorS', blank=True,
+                                    to='FilmRevolutionApp.Serie', null=True),
         ),
         migrations.AlterField(
             model_name='director',
@@ -73,31 +74,39 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='director',
             name='movie',
-            field=models.ForeignKey(related_name='DirectorM', blank=True, to='FilmRevolutionApp.Movie', null=True),
+            field=models.ForeignKey(related_name='DirectorM', blank=True,
+                                    to='FilmRevolutionApp.Movie', null=True),
         ),
         migrations.AlterField(
             model_name='director',
             name='serie',
-            field=models.ForeignKey(related_name='DirectorS', blank=True, to='FilmRevolutionApp.Serie', null=True),
+            field=models.ForeignKey(related_name='DirectorS', blank=True,
+                                    to='FilmRevolutionApp.Serie', null=True),
         ),
         migrations.AlterField(
             model_name='movie',
             name='popularity',
-            field=models.IntegerField(validators=[django.core.validators.MaxValueValidator(100), django.core.validators.MinValueValidator(1)]),
+            field=models.IntegerField(
+                validators=[django.core.validators.MaxValueValidator(100),
+                            django.core.validators.MinValueValidator(1)]),
         ),
         migrations.AlterField(
             model_name='serie',
             name='numberChapters',
-            field=models.IntegerField(validators=[django.core.validators.MinValueValidator(1)]),
+            field=models.IntegerField(
+                validators=[django.core.validators.MinValueValidator(1)]),
         ),
         migrations.AlterField(
             model_name='serie',
             name='numberSeasons',
-            field=models.IntegerField(validators=[django.core.validators.MinValueValidator(1)]),
+            field=models.IntegerField(
+                validators=[django.core.validators.MinValueValidator(1)]),
         ),
         migrations.AlterField(
             model_name='serie',
             name='popularity',
-            field=models.IntegerField(validators=[django.core.validators.MaxValueValidator(100), django.core.validators.MinValueValidator(1)]),
+            field=models.IntegerField(
+                validators=[django.core.validators.MaxValueValidator(100),
+                            django.core.validators.MinValueValidator(1)]),
         ),
     ]

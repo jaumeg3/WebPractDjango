@@ -1,19 +1,22 @@
 from django.core.urlresolvers import reverse
-from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
+from django.shortcuts import render_to_response
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView
-from models import MovieReview, SerieReview, Movie, Serie, Director, Actor, \
-    Production, Platform
-from forms import MovieForm, SerieForm
 from rest_framework import generics
 from rest_framework.decorators import api_view
-from rest_framework.reverse import reverse
 from rest_framework.response import Response
+from rest_framework.reverse import reverse
+
+from forms import MovieForm, SerieForm
+from models import MovieReview, SerieReview, Movie, Serie, Director, Actor, \
+    Production, Platform
 from serializers import MovieSerializer, SerieSerializer, \
     ActorSerializer, DirectorSerializer, ProductionSerializer, \
     PlatformSerializer
+
+
 # Create your views here.
 
 
@@ -141,6 +144,7 @@ def deleteM(request, pk):
     movie = get_object_or_404(Movie, pk=pk)
     movie.delete()
     return HttpResponseRedirect(reverse('FilmRevolutionApp:movie_list'))
+
 
 def deleteS(request, pk):
     '''This function deletes an instance of movie'''

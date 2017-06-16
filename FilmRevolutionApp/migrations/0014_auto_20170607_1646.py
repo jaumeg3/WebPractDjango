@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('FilmRevolutionApp', '0013_auto_20170525_1701'),
     ]
@@ -35,7 +34,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='movie',
             name='director',
-            field=models.ForeignKey(to='FilmRevolutionApp.Director', null=True),
+            field=models.ForeignKey(to='FilmRevolutionApp.Director',
+                                    null=True),
         ),
         migrations.AddField(
             model_name='serie',
@@ -45,6 +45,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='serie',
             name='director',
-            field=models.ForeignKey(to='FilmRevolutionApp.Director', null=True),
+            field=models.ForeignKey(to='FilmRevolutionApp.Director',
+                                    null=True),
         ),
     ]

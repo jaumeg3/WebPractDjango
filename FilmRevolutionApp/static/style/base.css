@@ -1,34 +1,34 @@
-#header
-{
+#header {
     margin: 0;
     padding: 10px;
     text-align: right;
     border-bottom: solid 1px;
 }
-#content
-{
+
+#content {
     margin-left: 20%;
     width: 60%;
     padding: 10px;
     margin-top: 48px;
 }
-#sidebar
-{
+
+#sidebar {
     float: left;
     width: 100%;
 }
-#footer
-{
+
+#footer {
     margin: 0;
     padding: 10px;
     text-align: center;
 }
-textarea, input[type=number], input[type=url]
-{
+
+textarea, input[type=number], input[type=url] {
     height: 1.25em;
     width: 25em;
 }
-h1{
+
+h1 {
     text-align: center;
 }
 
@@ -43,7 +43,7 @@ h1{
 
 #element_list {
     float: left;
-    border-right:1px solid #bbb;
+    border-right: 1px solid #bbb;
 }
 
 #element_list:last-child {
@@ -61,6 +61,7 @@ h1{
 #element_list a:hover {
     background-color: green;
 }
+
 /*End style menu*/
 
 /*Style elements list*/
@@ -87,11 +88,11 @@ h1{
 
 body {
     width: 100%;
-	height:100%;
-    background: #517fa4;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #243949, #517fa4);  /* Chrome 10-25, Safari 5.1-6 */
+    height: 100%;
+    background: #517fa4; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243949, #517fa4); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #243949, #517fa4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     transition: background-color .5s;
     color: white;
 }
@@ -100,12 +101,12 @@ a {
     color: yellow;
 }
 
-a:hover{
+a:hover {
     color: red;
 }
 
 /* Menu */
- /* The side navigation menu */
+/* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -130,7 +131,7 @@ a:hover{
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
+.sidenav a:hover, .offcanvas a:focus {
     color: #f1f1f1;
 }
 
@@ -151,6 +152,11 @@ a:hover{
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 }

@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-<script>
-         $(function() {
+    <script>
+        $(function () {
             $.getJSON("{% static "countries.json" %}", {}, function (countries) {
                 $("#id_country").autocomplete({
                     source: countries
                 });
             });
             $("#id_city").autocomplete({
-                source: function( request, response ) {
+                source: function (request, response) {
                     $.ajax({
                         url: "http://ws.geonames.org/searchJSON",
                         dataType: "jsonp",
@@ -19,8 +19,8 @@
                             name_startsWith: request.term,
                             username: "demo"
                         },
-                        success: function( data ) {
-                            response( $.map( data.geonames, function( item ) {
+                        success: function (data) {
+                            response($.map(data.geonames, function (item) {
                                 return {
                                     label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
                                     value: item.name,
@@ -32,7 +32,7 @@
                     });
                 },
                 minLength: 2,
-                select: function( event, ui ) {
+                select: function (event, ui) {
                     if (ui.item) {
                         $("#id_state").val(ui.item.stateOrProvince);
                         $("#id_country").val(ui.item.countryName);

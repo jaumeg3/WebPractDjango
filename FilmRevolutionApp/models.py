@@ -1,8 +1,9 @@
-from django.db import models
+from datetime import date
+
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
-from datetime import date
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.db import models
 
 
 # Create your models here.
@@ -124,7 +125,8 @@ class Movie(models.Model):
         if not reviewCount:
             return 0
         else:
-            ratingSum = sum([float(review.rating) for review in self.moviereview_set.all()])
+            ratingSum = sum([float(review.rating) for review in
+                             self.moviereview_set.all()])
             return ratingSum / reviewCount
 
 
@@ -157,7 +159,8 @@ class Serie(models.Model):
         if not reviewCount:
             return 0
         else:
-            ratingSum = sum([float(review.rating) for review in self.seriereview_set.all()])
+            ratingSum = sum([float(review.rating) for review in
+                             self.seriereview_set.all()])
             return ratingSum / reviewCount
 
 

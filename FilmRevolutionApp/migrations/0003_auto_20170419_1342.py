@@ -3,13 +3,13 @@
 from __future__ import unicode_literals
 
 import datetime
+
+import django.db.models.deletion
 from django.conf import settings
 from django.db import migrations, models
-import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('FilmRevolutionApp', '0002_seriereview'),
@@ -19,22 +19,34 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='actor',
             name='movie',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='ActorM', to='FilmRevolutionApp.Movie'),
+            field=models.ForeignKey(null=True,
+                                    on_delete=django.db.models.deletion.CASCADE,
+                                    related_name='ActorM',
+                                    to='FilmRevolutionApp.Movie'),
         ),
         migrations.AddField(
             model_name='actor',
             name='serie',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='ActorS', to='FilmRevolutionApp.Serie'),
+            field=models.ForeignKey(null=True,
+                                    on_delete=django.db.models.deletion.CASCADE,
+                                    related_name='ActorS',
+                                    to='FilmRevolutionApp.Serie'),
         ),
         migrations.AddField(
             model_name='director',
             name='movie',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='DirectorM', to='FilmRevolutionApp.Movie'),
+            field=models.ForeignKey(null=True,
+                                    on_delete=django.db.models.deletion.CASCADE,
+                                    related_name='DirectorM',
+                                    to='FilmRevolutionApp.Movie'),
         ),
         migrations.AddField(
             model_name='director',
             name='serie',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='DirectorS', to='FilmRevolutionApp.Serie'),
+            field=models.ForeignKey(null=True,
+                                    on_delete=django.db.models.deletion.CASCADE,
+                                    related_name='DirectorS',
+                                    to='FilmRevolutionApp.Serie'),
         ),
         migrations.AddField(
             model_name='movie',
@@ -44,17 +56,23 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='movie',
             name='user',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(default=1,
+                                    on_delete=django.db.models.deletion.CASCADE,
+                                    to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
             model_name='platform',
             name='serie',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='FilmRevolutionApp.Serie'),
+            field=models.ForeignKey(null=True,
+                                    on_delete=django.db.models.deletion.CASCADE,
+                                    to='FilmRevolutionApp.Serie'),
         ),
         migrations.AddField(
             model_name='production',
             name='movie',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='FilmRevolutionApp.Movie'),
+            field=models.ForeignKey(null=True,
+                                    on_delete=django.db.models.deletion.CASCADE,
+                                    to='FilmRevolutionApp.Movie'),
         ),
         migrations.AddField(
             model_name='serie',
@@ -64,6 +82,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='serie',
             name='user',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(default=1,
+                                    on_delete=django.db.models.deletion.CASCADE,
+                                    to=settings.AUTH_USER_MODEL),
         ),
     ]

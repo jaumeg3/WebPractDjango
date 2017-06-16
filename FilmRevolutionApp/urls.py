@@ -1,15 +1,16 @@
 from django.conf.urls import url, include
 from django.utils import timezone
 from django.views.generic import ListView, UpdateView
-from models import Movie, Serie, Actor, Director, Production, Platform
+from rest_framework.urlpatterns import format_suffix_patterns
+
 from forms import MovieForm, SerieForm, ActorForm, DirectorForm
+from models import Movie, Serie, Actor, Director, Production, Platform
 from views import MovieCreate, SerieCreate, MovieDetail, SerieDetail, \
     DirectorDetail, ActorDetail, PlatformDetail, ProductionDetail, reviewM, \
     reviewS, mainpage, deleteM, deleteS, MovieDetailAPI, MovieListAPI, \
     SerieDetailAPI, SerieListAPI, ActorListAPI, ActorDetailAPI, \
-    DirectorListAPI, DirectorDetailAPI, ProductionListAPI,\
+    DirectorListAPI, DirectorDetailAPI, ProductionListAPI, \
     ProductionDetailAPI, PlatformListAPI, PlatformDetailAPI
-from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     # List latest 5 movies: /movies/
@@ -52,7 +53,7 @@ urlpatterns = [
         UpdateView.as_view(
             model=Actor,
             template_name='actors/form.html',
-            form_class=ActorForm,),
+            form_class=ActorForm, ),
         name='actor_edit'),
     # Director details, ex.: /directors/1/
     url(r'^directors/(?P<pk>\d+)/$',
@@ -69,7 +70,7 @@ urlpatterns = [
         UpdateView.as_view(
             model=Director,
             template_name='directors/form.html',
-            form_class=DirectorForm,),
+            form_class=DirectorForm, ),
         name='director_edit'),
     # Platform details, ex.: /platform/1/
     url(r'^platform/(?P<pk>\d+)/$',
