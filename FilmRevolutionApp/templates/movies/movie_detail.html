@@ -16,8 +16,7 @@
         {% endif %}
         </h1>
     {% if movie.image %}
-        <span property="image"><p><img src="{{ movie.image.url }}"
-                                       width="100%"/></p></span>
+        <p><img property="image" src="{{ movie.image.url }}" width="100%"/></p>
     {% endif %}
     <h2>
             Country:
@@ -108,6 +107,7 @@
     {% else %}
         <p>Please, log in first</p>
     {% endif %}
+    </span>
 {% endblock %}
 {% block  footer %}
     Created  by  {{ movie.user }}  on
