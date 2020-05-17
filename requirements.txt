@@ -25,7 +25,7 @@ python-Levenshtein==0.10.2
 python-memcached==1.45
 python-openid==2.2.5
 PyXML==0.8.4
-PyYAML==3.10
+PyYAML==5.1
 reportlab==2.5
 simplejson==2.0.9
 six==1.7.3
